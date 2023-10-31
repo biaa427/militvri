@@ -513,9 +513,9 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100vh;
     min-height: 640px;
     flex-direction: column;
+    background-color: var(--primary-color-white-darker);
 }
 
 ::selection {
@@ -525,9 +525,9 @@
 
 .carousell {
     position: relative;
-    width: 1100px;
-    height: 700px;
-    margin: 20px;
+    width: 1500px;
+    height: 900px;
+    margin: 40px;
     border-radius: 10px;
     overflow: hidden;
     font-weight: 300;
@@ -535,8 +535,8 @@
     font-size: 1em;
     color: var(--primary-color-black);
     background-color: #eee;
-    box-shadow: 0 40px 40px -20px #8fc7d577;
-    margin-top: -200px;
+    box-shadow: 0 25px 25px -5px var(--primary-color-darker);
+    
 }
 
 .carousell .img-list {
@@ -592,6 +592,7 @@
     transform: translateX(-50%);
     z-index: 200;
     width: fit-content;
+    width: -moz-fit-content;
 }
 
 .carousell .caro-btn {
@@ -623,12 +624,62 @@
 
 /* ---------- FEATURED PRODUCTS ---------- */
 
-.featured-products {
-    margin-top: 420px;
+.all-products {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .featured-products h1 {
     text-align: center;
-    margin-bottom: 2rem;
-    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    margin-top: 2rem;
+}
+
+.product {
+    overflow: hidden;
+    background: #fff;
+    color: #21201e;
+    text-align: center;
+    width: 240px;
+    height: 400px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.2rem;
+    margin: 2rem;
+}
+
+.product:hover img {
+    scale: 1.1;
+}
+
+.product:hover {
+    box-shadow: 5px 15px 25px var(--primary-color-darker);
+}
+
+.product img {
+    height: 200px;
+    margin: 1rem;
+    transition: all 0.3s;
+}
+
+.product a:link, 
+.product a:visited {
+    color: #ececec;
+    display: inline-block;
+    text-decoration: none;
+    background-color: var(--primary-color-darker);
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    transition: all 0.2s;
+}
+
+.product a:hover {
+    transform: scale(1.1);
 }
