@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <title>THE BRIGHT SIDE</title>
+    </head>
+    <body>
+        
+        <div class="shared-container">
+            <div class="navigation">
+                <div class="container">
+                    <div class="navbar">
+                        <div class="logo-toggle-container">
+                            <a href="#" title="logo"><img src="images/logo.png" alt="" class="logo-image" /></a>
+                            <span class="toggle-box">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </div>
+                        <ul class="menu">
+                            <li><a href="index.html">HOME</a></li>
+                            <li><a href="brightside.html">THE BRIGHT SIDE</a></li>
+                            <li><a href="#">THE DARK SIDE</a></li>
+                
+                            <li><a href="#" title="logoCart"><img src="images/logo-cart-empty.png" alt="" class="logo-cart"></a></li>
+                            <li><a href="contact.html">CONTACT</a></li>
+                            <li><a href="#">OUR STORY</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="bright-side">
+                <section class="carousell">
+                    <div class="img-list" id="img-list">
+                        <img src="images/slide-1.jpg" width="770" alt="">
+                        <img src="images/slide-2.jpg" width="770" alt="">
+                        <img src="images/slide-3.jpg" width="770" alt="">
+                    </div>
+                    <div class="content">
+                        <div class="text-content">
+                            <h2>Text</h2>
+                            <p>This is a text</p>
+                        </div>
+                    </div>
+                    <div class="btn-section">
+                        <div class="caro-btn" onclick="slideImg(0)"></div>
+                        <div class="caro-btn" onclick="slideImg(1)"></div>
+                        <div class="caro-btn" onclick="slideImg(2)"></div>
+                    </div>
+                </section>
+
+                <section class="featured-products">
+                    <h1>Featured Products</h1>
+                    <div class="all-products">
+                        <div class="product">
+                            <img src="images/product-1.jpeg" alt="">
+                            <div class="product-info">
+                                <h4 class="product-title">Product 1</h4>
+                                <p class="product-price">$29</p>
+                                <a class="product-btn" href="#">Buy Now</a>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <img src="images/product-2.jpeg" alt="">
+                            <div class="product-info">
+                                <h4 class="product-title">Product 2</h4>
+                                <p class="product-price">$29</p>
+                                <a class="product-btn" href="#">Buy Now</a>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <img src="images/product-3.jpeg" alt="">
+                            <div class="product-info">
+                                <h4 class="product-title">Product 3</h4>
+                                <p class="product-price">$29</p>
+                                <a class="product-btn" href="#">Buy Now</a>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <img src="images/product-4.jpeg" alt="">
+                            <div class="product-info">
+                                <h4 class="product-title">Product 4</h4>
+                                <p class="product-price">$29</p>
+                                <a class="product-btn" href="#">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>  
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript">
+
+            $(document).ready(function() {
+                $(".toggle-box").click(function() {
+                    $(".menu").stop().slideToggle();
+                })
+            });
+        </script>
+
+        <script src="js/script.js">
+            
+        </script>
+    </body>
+</html>
