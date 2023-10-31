@@ -35,11 +35,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navigation {
-    background-color: var(--primary-color-white);
+    /*background-color: var(--primary-color-white);*/
+    background-color: transparent;
     position: relative;
     transition: transparent-color 0.3s ease;
     z-index: 1;
-    height: 85px;
+    height: 5.3rem;
 }
 
 .navigation > .container {
@@ -56,7 +57,7 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    padding: 15px 10px;
+    padding: 2.1rem 0.6rem;
 }
 
 .logo-toggle-container a {
@@ -64,7 +65,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo-toggle-container a img {
-    width: 120px;
+    width: 7.5rem;
 }
 
 .menu {
@@ -73,7 +74,7 @@ h1, h2, h3, h4, h5, h6 {
     list-style: none;
 }
 
-@media screen and (min-width: 1101px) {
+@media screen and (min-width: 183.5rem) {
     .menu {
         display: block !important;
         height: auto !important;
@@ -82,20 +83,21 @@ h1, h2, h3, h4, h5, h6 {
 
 .menu li {
     display: inline-block;
-    padding: 25px 0px;
+    padding: 1.56rem 0;
     margin-left: 0;
     flex: 1;
 }
 
 .menu li a {
     display: block;
-    padding: 8px 15px;
+    padding: 0.5rem 0.93rem;
     text-decoration: none;
     font-weight: 600;
-    letter-spacing: 0.5px;
-    color: var(--primary-color-black);
-    font-size: 16px;
-    height: 34px;
+    letter-spacing: 0.03rem;
+    /*color: var(--primary-color-black);*/
+    color: var(--primary-color-white);
+    font-size: 1rem;
+    height: 2.1rem;
 }
 
 .menu li:nth-child(1),
@@ -110,30 +112,32 @@ h1, h2, h3, h4, h5, h6 {
 
 .menu li:last-child {
     justify-content: flex-end;
-    padding-right: 20px;
+    padding-right: 1.25rem;
 }
 
 .navigation:hover {
-    background-color: transparent;
+    /*background-color: transparent;*/
+    background-color: var(--primary-color-white);
     
 }
 
 .navigation:hover .menu li a {
-    color: var(--primary-color-white);
+    /*color: var(--primary-color-white);*/
+    color: var(--primary-color-black);
 }
 
 .navigation:hover .logo-image {
-    content: url(../images/logo-white.png);
+    content: url(../images/logo-scris.png);
 }
 
 .navigation:hover .logo-cart {
-    content: url(../images/logo-cart-white.png);
+    content: url(../images/logo-cart-empty.png);
 }
 
 .logo-cart {
-    width: 50px;
+    width: 3.1rem;
     height: auto;
-    padding: 0 15px;
+    padding: 0 0.9rem;
 }
 
 @media screen and (max-width: 1100px) {
@@ -149,7 +153,7 @@ h1, h2, h3, h4, h5, h6 {
     .toggle-box {
         position: absolute;
         right: 10px;
-        top: 30px;
+        top: 20px;
         display: block;
         width: 40px;
         background: var(--primary-color-black);
@@ -176,6 +180,7 @@ h1, h2, h3, h4, h5, h6 {
         display: flex;
         flex-direction: column; 
         list-style: none;
+        background-color: var(--primary-color-white);
     }
 
     .menu li {
@@ -206,7 +211,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .navigation:hover .logo-image {
-        content: url(../images/logo.png); /* Initial logo */
+        content: url(../images/logo-scris.png); /* Initial logo */
     }
 
     .navigation:hover .logo-cart {
@@ -490,6 +495,7 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
 }
 
+
 .shared-container .navigation:hover {
     background-color: var(--primary-color-white); /* Initial white background */
 }
@@ -499,12 +505,29 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .shared-container .navigation:hover .logo-image {
-    content: url(../images/logo.png); /* Initial logo */
+    content: url(../images/logo-scris.png); /* Initial logo */
 }
 
 .shared-container .navigation:hover .logo-cart {
     content: url(../images/logo-cart-empty.png); /* Initial cart logo */
 }
+
+.shared-container .navigation {
+    background-color: var(--primary-color-white);
+}
+
+.shared-container .navigation .menu li a {
+    color: var(--primary-color-black);
+}
+
+.shared-container .navigation .logo-image {
+    content: url(../images/logo-scris.png);
+}
+
+.shared-container .navigation:hover .logo-cart {
+    content: url(../images/logo-cart-empty.png);
+}
+
 
 /* ---------- SLIDER ---------- */
 
@@ -534,18 +557,17 @@ h1, h2, h3, h4, h5, h6 {
 
 .carousell {
     position: relative;
-    width: 1100px;
-    height: 600px;
-    margin: 40px;
-    border-radius: 10px;
+    width: 68rem;
+    height: 37rem;
+    margin: 2.5rem;
+    border-radius: 0.6rem;
     overflow: hidden;
     font-weight: 300;
     font-style: normal;
-    font-size: 1em;
+    font-size: 1rem;
     color: var(--primary-color-black);
     background-color: #eee;
-    box-shadow: 0 25px 25px -5px var(--primary-color-darker);
-    
+    box-shadow: 0 1.5rem 1.5rem -0.3rem var(--primary-color-darker);
 }
 
 .carousell .img-list {
@@ -570,33 +592,34 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 100;
     width: 100%;
     height: 100%;
-    padding: 50px;
-    padding-bottom: 75px;
+    padding: 3rem;
+    padding-bottom: 4.6rem;
 }
 
 .carousell .text-content {
     position: absolute;
     bottom: 120px;
-    width: calc(100% - 100px);
-    max-width: 400px;
+    width: calc(100% - 6.25rem);
+    max-width: 7.5rem;
     line-height: 1.2;
     color: var(--primary-color-black);
 }
 
 .carousell h2 {
-    font-size: 3em;
+    font-size: 2.1rem;
     font-weight: 700;
-    padding-bottom: 20px;
+    padding-bottom: 1.25rem;
 }
 
 .carousell p {
     font-weight: 400;
+    font-size: 1rem;
 }
 
 .carousell .btn-section {
     position: absolute;
     display: flex;
-    bottom: 20px;
+    bottom: 1.25rem;
     left: 50%;
     transform: translateX(-50%);
     z-index: 200;
@@ -605,9 +628,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .carousell .caro-btn {
-    width: 25px;
-    height: 5px;
-    margin: 0 4px;
+    width: 1.56rem;
+    height: 0.3rem;
+    margin: 0 0.25rem;
     background-color: var(--grey-color);
     transition: 300ms;
     cursor: pointer;
@@ -621,13 +644,123 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--primary-color-white-darker);
 }
 
-@media only screen and (max-width: 370px) {
-    .carousell .content {
-        padding: 25px;
+@media (max-width: 1110px) {
+    .carousell {
+        width: 50rem;
+        height: 30rem;
+    }
+
+    .carousell .img-list {
+        width: calc(100% * 3);
+    }
+
+    .content h2 {
+        font-size: 1.9rem;
+    }
+
+    .carousell p {
+        font-weight: 400;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 890px) {
+    .carousell {
+        width: 35rem;
+        height: 20rem;
+    }
+
+    .carousell .img-list {
+        width: calc(100% * 3);
     }
 
     .carousell h2 {
-        font-size: 2.5em;
+        font-size: 1.7rem;
+        padding-bottom: 0;
+        margin-bottom: 0.2rem;
+        margin-left: -2rem;
+    }
+
+    .carousell p {
+        font-weight: 400;
+        font-size: 0.8rem;
+        margin-left: -2rem;
+        margin-bottom: -3rem;
+    }
+}
+
+@media (max-width: 550px) {
+    .carousell {
+        width: 25rem;
+        height: 15rem;
+    }
+
+    .carousell .img-list {
+        width: calc(100% * 3);
+    }
+
+    .carousell h2 {
+        font-size: 1.5rem;
+        padding-bottom: 0;
+        margin-bottom: 0.2rem;
+        margin-left: -2rem;
+    }
+
+    .carousell p {
+        font-weight: 400;
+        font-size: 0.6rem;
+        margin-left: -2rem;
+        margin-bottom: -3rem;
+    }
+}
+
+@media (max-width: 415px) {
+    .carousell {
+        width: 20rem;
+        height: 13rem;
+    }
+
+    .carousell .img-list {
+        width: calc(100% * 3.001);
+    }
+
+    .carousell h2 {
+        font-size: 1.3rem;
+        padding-bottom: 0;
+        margin-bottom: 0.3rem;
+        margin-left: -2rem;
+    }
+
+    .carousell p {
+        font-weight: 400;
+        font-size: 0.6rem;
+        margin-left: -2rem;
+        margin-bottom: -5rem;
+    }
+}
+
+@media (max-width: 290px) {
+    .carousell {
+        width: 15rem;
+        height: 10rem;
+    }
+
+    .carousell .img-list {
+        width: calc(100% * 3);
+    }
+
+    .carousell h2 {
+        font-size: 1rem;
+        padding-bottom: 0;
+        margin-bottom: 0.3rem;
+        margin-left: -2rem;
+    }
+
+    .carousell p {
+        font-weight: 400;
+        font-size: 0.6rem;
+        margin-left: -2rem;
+        margin-bottom: -5rem;
     }
 }
 

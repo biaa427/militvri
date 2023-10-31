@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="icon" type="image/png" href="images/logo-M.png"/>
         <title>CONTACT</title>
     </head>
 
@@ -14,7 +15,7 @@
                 <div class="container">
                     <div class="navbar">
                         <div class="logo-toggle-container">
-                            <a href="#" title="logo"><img src="images/logo.png" alt="" class="logo-image" /></a>
+                            <a href="#" title="logo"><img src="images/logo-scris.png" alt="" class="logo-image" /></a>
                             <span class="toggle-box">
                                 <span></span>
                                 <span></span>
@@ -101,10 +102,25 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script type="text/javascript">
             $(document).ready(function() {
-                $(".toggle-box").click(function() {
+                $(".toggle-box").click(function(e) {
+                    e.stopPropagation(); // Prevents the click event from propagating to parent elements
                     $(".menu").stop().slideToggle();
-                })
-            })
+                });
+
+                // Check window width and handle menu item clicks
+                $(".menu li a").click(function() {
+                    if ($(window).width() < 1100) {
+                        $(".menu").slideUp(); // Closes the menu when a menu item is clicked on smaller screens
+                    }
+                });
+
+                // Close menu on clicking outside the menu area
+                $(document).on('click', function(e) {
+                    if (!$(e.target).closest('.navigation').length) {
+                        $(".menu").slideUp(); // Closes the menu if the clicked element is outside the menu area
+                    }
+                });
+            });
         </script>
         
     </body>
