@@ -30,7 +30,8 @@
 .navigation {
     background-color: var(--primary-color-white);
     position: relative;
-    transition: 0.3s ease;
+    transition: transparent-color 0.3s ease;
+    z-index: 1;
 }
 
 .navigation > .container {
@@ -106,7 +107,7 @@
 
 .navigation:hover {
     background-color: transparent;
-    transition: 0.3s ease;
+    
 }
 
 .navigation:hover .menu li a {
@@ -224,6 +225,7 @@ section::before {
     width: 50%;
     height: 100%;
     background: var(--primary-color-white-darker);
+    z-index: 0;
 }
 
 .contact-container {
@@ -472,4 +474,25 @@ section::before {
     .contact-container .contact-form .formBox .inputBox.w50 {
         width: 100%;
     }
+}
+
+.shared-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.shared-container .navigation:hover {
+    background-color: var(--primary-color-white); /* Initial white background */
+}
+
+.shared-container .navigation:hover .menu li a {
+    color: var(--primary-color-black); /* Set text color back to black */
+}
+
+.shared-container .navigation:hover .logo-image {
+    content: url(../images/logo.png); /* Initial logo */
+}
+
+.shared-container .navigation:hover .logo-cart {
+    content: url(../images/logo-cart-empty.png); /* Initial cart logo */
 }

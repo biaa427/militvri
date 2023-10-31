@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,93 +8,104 @@
     </head>
 
     <body>
-        <!--
-        <div class="navigation">
-            <div class="container">
-                <div class="navbar">
-                    <div class="logo-toggle-container">
-                        <a href="#"><img src="images/logo.png" alt="" class="logo-image" /></a>
-                        <span class="toggle-box">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </span>
-                    </div>
-                    <ul class="menu">
-                        <li><a href="#">HOME</a></li>
-                        <li><a href="#">THE BRIGHT SIDE</a></li>
-                        <li><a href="#">THE DARK SIDE</a></li>
-        
-                        <li><a href="#"><img src="images/logo-cart-empty.png" alt="" class="logo-cart"></a></li>
-                        <li><a href="contact.html">CONTACT</a></li>
-                        <li><a href="#">OUR STORY</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        -->
 
-        <section>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div>
-                        <h2>Contact Info</h2>
-                        <ul class="info">
-                            <li>
-                                <span><img src="images/icon-location.png" alt=""/></span>
-                                <span>
-                                    Address
-                                </span>
-                            </li>
-                            <li>
-                                <span><img src="images/icon-mail.png" alt=""/></span>
-                                <span>
-                                    mail@example.com
-                                </span>
-                            </li>
-                            <li>
-                                <span><img src="images/icon-phone.png" alt=""/></span>
-                                <span>
-                                    +40 712 345 678
-                                </span>
-                            </li>
+        <div class="shared-container">
+            <div class="navigation">
+                <div class="container">
+                    <div class="navbar">
+                        <div class="logo-toggle-container">
+                            <a href="#" title="logo"><img src="images/logo.png" alt="" class="logo-image" /></a>
+                            <span class="toggle-box">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </div>
+                        <ul class="menu">
+                            <li><a href="index.html">HOME</a></li>
+                            <li><a href="#">THE BRIGHT SIDE</a></li>
+                            <li><a href="#">THE DARK SIDE</a></li>
+            
+                            <li><a href="#" title="logoCart"><img src="images/logo-cart-empty.png" alt="" class="logo-cart"></a></li>
+                            <li><a href="contact.html">CONTACT</a></li>
+                            <li><a href="#">OUR STORY</a></li>
                         </ul>
                     </div>
-
-                    <ul class="sci">
-                        <li><a href="#"><img src="images/logo-insta.png" alt="" ></a></li>
-                        <li><a href="#"><img src="images/logo-tiktok.png" alt="" ></a></li>
-                    </ul>
                 </div>
-                <div class="contact-form">
-                    <h2>Send a Message</h2>
-                    <div class="formBox">
-                        <div class="inputBox w50">
-                            <input type="text" required>
-                            <span>First Name</span>
+            </div>
+            
+            <section>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div>
+                            <h2>Contact Info</h2>
+                            <ul class="info">
+                                <li>
+                                    <span><img src="images/icon-location.png" alt=""/></span>
+                                    <span>
+                                        Address
+                                    </span>
+                                </li>
+                                <li>
+                                    <span><img src="images/icon-mail.png" alt=""/></span>
+                                    <span>
+                                        mail@example.com
+                                    </span>
+                                </li>
+                                <li>
+                                    <span><img src="images/icon-phone.png" alt=""/></span>
+                                    <span>
+                                        +40 712 345 678
+                                    </span>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="inputBox w50">
-                            <input type="text" required>
-                            <span>Last Name</span>
-                        </div>
-                        <div class="inputBox w50">
-                            <input type="email" required>
-                            <span>Email Address</span>
-                        </div>
-                        <div class="inputBox w50">
-                            <input type="text" required>
-                            <span>Phone Number</span>
-                        </div>
-                        <div class="inputBox w100">
-                            <textarea required></textarea>
-                            <span>Write your message here...</span>
-                        </div>
-                        <div class="inputBox w100">
-                            <input type="submit" value="Send">
+    
+                        <ul class="sci">
+                            <li><a href="#" title="logoInsta"><img src="images/logo-insta.png" alt="" ></a></li>
+                            <li><a href="#" title="logoTikTok"><img src="images/logo-tiktok.png" alt="" ></a></li>
+                        </ul>
+                    </div>
+                    <div class="contact-form">
+                        <h2>Send a Message</h2>
+                        <div class="formBox">
+                            <div class="inputBox w50">
+                                <input type="text" title="firstName" required>
+                                <span>First Name</span>
+                            </div>
+                            <div class="inputBox w50">
+                                <input type="text" title="lastName" required>
+                                <span>Last Name</span>
+                            </div>
+                            <div class="inputBox w50">
+                                <input type="email" title="email" required>
+                                <span>Email Address</span>
+                            </div>
+                            <div class="inputBox w50">
+                                <input type="text" title="phoneNumber" required>
+                                <span>Phone Number</span>
+                            </div>
+                            <div class="inputBox w100">
+                                <textarea title="message" required></textarea>
+                                <span>Write your message here...</span>
+                            </div>
+                            <div class="inputBox w100">
+                                <input type="submit" value="Send">
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(".toggle-box").click(function() {
+                    $(".menu").stop().slideToggle();
+                })
+            })
+        </script>
+        
     </body>
 </html>
