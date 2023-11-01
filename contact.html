@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/style.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <link rel="icon" type="image/png" href="images/logo-M.png"/>
         <title>CONTACT</title>
     </head>
@@ -11,29 +12,7 @@
     <body>
 
         <div class="shared-container">
-            <div class="navigation">
-                <div class="container">
-                    <div class="navbar">
-                        <div class="logo-toggle-container">
-                            <a href="#" title="logo"><img src="images/logo-scris.png" alt="" class="logo-image" /></a>
-                            <span class="toggle-box">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </span>
-                        </div>
-                        <ul class="menu">
-                            <li><a href="index.html">HOME</a></li>
-                            <li><a href="brightside.html">THE BRIGHT SIDE</a></li>
-                            <li><a href="#">THE DARK SIDE</a></li>
-            
-                            <li><a href="#" title="logoCart"><img src="images/logo-cart-empty.png" alt="" class="logo-cart"></a></li>
-                            <li><a href="contact.html">CONTACT</a></li>
-                            <li><a href="#">OUR STORY</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <div id="navigationContainer"></div>
             
             <section class="form-section">
                 <div class="contact-container">
@@ -100,6 +79,7 @@
         </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="js/script.js"></script>
         <script type="text/javascript">
             $(document).ready(function() {
                 $(".toggle-box").click(function(e) {

@@ -43,6 +43,22 @@ h1, h2, h3, h4, h5, h6 {
     height: 5.3rem;
 }
 
+.start-page .navigation .logo-image {
+    content: url(../images/logo-scris-white.png);
+}
+
+.shared-container .navigation .logo-image {
+    content: url(../images/logo-scris.png);
+}
+
+.start-page .navigation .logo-cart {
+    content: url(../images/logo-cart-white.png);
+}
+
+.shared-container .navigation .logo-cart {
+    content: url(../images/logo-cart-empty.png);
+}
+
 .navigation > .container {
     max-width: 90%;
     margin: auto;
@@ -528,8 +544,7 @@ h1, h2, h3, h4, h5, h6 {
     content: url(../images/logo-cart-empty.png);
 }
 
-
-/* ---------- SLIDER ---------- */
+/* ---------- BRIGHT SIDE ---------- */
 
 .bright-side {
     margin: 0;
@@ -550,10 +565,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--primary-color-white-darker);
 }
 
-::selection {
-    color: #fff;
-    background-color: aqua;
-}
+/* ---------- SLIDER ---------- */
 
 .carousell {
     position: relative;
@@ -574,7 +586,7 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     top: 0;
     left: 0%;
-    width: calc(100% * 3);
+    width: calc(100% * 3.001);
     height: 100%;
     transition: 500ms;
 }
@@ -828,4 +840,25 @@ h1, h2, h3, h4, h5, h6 {
 
 .product a:hover {
     transform: scale(1.1);
+}
+
+/* ---------- DARK SIDE ---------- */
+
+.dark-side {
+    margin: 0;
+    padding: 0;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1em;
+    line-height: 1.5;
+    color: var(--primary-color-white);
+    scroll-behavior: smooth;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: var(--primary-color-black);
 }
