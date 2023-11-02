@@ -80,14 +80,22 @@ loadProducts();
 
 /* CART */
 
-const cartIcon = document.querySelector('#cart-btn');
-const cart = document.querySelector('.cart');
-const closeCart = document.querySelector('#close-cart');
+function openCart() {
+    const cartIcon = document.querySelector('#cart-btn');
+    const cart = document.querySelector('.cart');
+    
+    cartIcon.onclick = () => {
+        cart.classList.add("active");
+    }
+};
 
-cartIcon.onclick = () => {
-    cart.classList.add("active");
-}
+function closeCart() {
+    const cart = document.querySelector('.cart');
+    const closeCart = document.querySelector('#close-cart');
+    
+    closeCart.onclick = () => {
+        cart.classList.remove("active");
+    }
+};
 
-closeCart.onclick = () => {
-    cart.classList.remove("active");
-}
+    

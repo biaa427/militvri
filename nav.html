@@ -21,7 +21,7 @@
                         <li><a href="darkside.html">THE DARK SIDE</a></li>
             
                         <li>
-                            <button class="cart-btn" id="cart-btn" aria-label="View Shopping Cart">
+                            <button class="cart-btn" id="cart-btn" aria-label="View Shopping Cart" onclick="openCart()">
                                 <img src="images/logo-cart-empty.png" alt="" class="logo-cart">
                             </button>
                         </li>
@@ -47,7 +47,10 @@
                         <div class="total-price">$0</div>
                     </div>
                     <button type="button" class="btn-buy">Buy Now</button>
-                    <i class='bx bx-x' id="close-cart" ></i>
+                    <button class="close-cart" id="close-cart" aria-label="Close Shopping Cart" onclick="closeCart()">
+                        <i class='bx bx-x'></i>
+                    </button>
+                    
                 </div>
             </div>
         </div>
