@@ -1,4 +1,4 @@
-/* ------------------------------- photo slider buttons -------------------------- */
+/* photo slider buttons */
 
 var imgList = document.getElementById("img-list");
 var caroBtns = document.getElementsByClassName("caro-btn");
@@ -10,8 +10,7 @@ function slideImg(x) {
     var i;
 
     for (i = 0; i < caroBtns.length; i++) {
-        caroBtns[i].style.backgroundColor = "#ffffff44";
-        
+        caroBtns[i].style.backgroundColor = "#ffffff44";        
     }
 
     caroBtns[x].style.backgroundColor = "#fff";
@@ -19,116 +18,76 @@ function slideImg(x) {
     imgList.style.left = position + "%";
 };
 
-/* ------------------------------- show navigation --------------------------------- */
+/* show navigation */
 
 $(document).ready(function() {
     $('#navigationContainer').load('nav.html .navigation');
 });
 
-/* ------------------------------- shopping cart ------------------------------------ */
+/* shopping cart */
 
-let openShopping = document.querySelector('.shopping');
-let closeShopping = document.querySelector('.closeShopping');
-let list = document.querySelector('.cart-list');
-let listCard = document.querySelector('.listCard');
-let body = document.querySelector('body');
-let total = document.querySelector('.total');
-let quantity = document.querySelector('.quantity');
-
-openShopping.addEventListener('click', ()=>{
-    body.classList.add('active');
-})
-
-closeShopping.addEventListener('click', ()=>{
-    body.classList.remove('active');
-})
-
+let list = document.querySelector('.all-products');
 let products = [
     {
         id: 1,
         name: 'PRODUCT NAME 1',
         image: 'product-1.jpeg',
-        price: 29
+        price: 29,
+        serial_no: 135
     },
     {
         id: 2,
         name: 'PRODUCT NAME 2',
         image: 'product-2.jpeg',
-        price: 29
+        price: 29,
+        serial_no: 222
     },
     {
         id: 3,
         name: 'PRODUCT NAME 3',
         image: 'product-3.jpeg',
-        price: 29
+        price: 29,
+        serial_no: 210
     },
     {
         id: 4,
         name: 'PRODUCT NAME 4',
         image: 'product-4.jpeg',
-        price: 29
+        price: 29,
+        serial_no: 658
     },
 ];
-let listCards = [];
-function initApp(){
-    products.forEach((value, key)=>{
+
+function loadProducts() {
+    products.forEach((value, key) => {
         let newDiv = document.createElement('div');
-        newDiv.classList.add('item-cart');
+        newDiv.classList.add('product');
         newDiv.innerHTML = `
-        <img src="images/${value.image}"/>
-        <div class="cartItem-title">${value.name}</div>
-        <div class="cartItem-price">${value.price.toLocaleString()}</div>
-        <button onclick="addToCart(${key})">Add To Cart</button>
+        <img src="images//${value.image}" alt="">
+        <div class="product-info">
+            <h4 class="product-title">${value.name}</h4>
+            <p class="product-price">$${value.price}</p>
+            <button class="product-btn">Add To Cart</button>
+            
+        </div>
         `;
+
         list.appendChild(newDiv);
-    })
-}
-    
-initApp();
-
-function addToCart(key) {
-    if (listCards[key] == null) {
-        listCards[key] = products[key];
-        listCards[key].quantity = 1
-    }
-    reloadCart();
+    })    
 }
 
-function reloadCart() {
-    listCard.innerHTML = '';
-    let count = 0;
-    let totalPrice = 0;
-    listCards.forEach((value, key) => {
-        totalPrice = totalPrice + value.price;
-        count = count + value.quantity;
+loadProducts();
 
-        if (value != null) {
-            let newDiv = document.createElement('li');
-            newDiv.innerHTML = `
-                <div><img src="images/${value.image}"/></div>
-                <div>${value.name}</div>
-                <div>${value.price.toLocaleString()}</div>
-                <div>${value.quantity}</div>
-                <div>
-                    <button onclick="changeQuantity(${key}, ${value.quantity - 1})">-</button>
-                    <div class="count">${value.quantity}</div>
-                    <button onclick="changeQuantity(${key}, ${value.quantity + 1})">+</button>
-                </div>
+/* CART */
 
-            `
-            listCard.appendChild(newDiv);
-        }
-    })
-    total.innerText = totalPrice.toLocaleString();
-    quantity.innerText =  count;
+const cartIcon = document.querySelector('#cart-btn');
+const cart = document.querySelector('.cart');
+const closeCart = document.querySelector('#close-cart');
+
+cartIcon.onclick = () => {
+    cart.classList.add("active");
 }
 
-function changeQuantity(key, quantity) {
-    if (quantity == 0) {
-        delete listCards[key];
-    } else {
-        listCards[key].quantity = quantity;
-        listCards[key].price = quantity * products[key].price;
-    }
-    reloadCart();
+closeCart.onclick = () => {
+    cart.classList.remove("active");
 }

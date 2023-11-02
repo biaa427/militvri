@@ -33,12 +33,6 @@
                     }
                 });
 
-                // Close menu on clicking outside the menu area
-                $(document).on('click', function(e) {
-                    if (!$(e.target).closest('.navigation').length) {
-                        $(".menu").slideUp(); // Closes the menu if the clicked element is outside the menu area
-                    }
-                });
             });
         </script>
     </body>

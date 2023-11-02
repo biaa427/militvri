@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="css/style.css">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <link rel="icon" type="image/png" href="images/logo-M.png"/>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <title>THE BRIGHT SIDE</title>
     </head>
     <body>
@@ -22,8 +23,8 @@
                     </div>
                     <div class="content">
                         <div class="text-content">
-                            <h2>Text</h2>
-                            <p>This is a text</p>
+                            <h2>INSPIRED FROM LIFESTYLE.</h2>
+                            <!-- <p>This is a text</p> -->
                         </div>
                     </div>
                     <div class="btn-section">
@@ -34,45 +35,10 @@
                 </section>
 
                 <section class="featured-products">
-                    <header>
                         <h1>Featured Products</h1>
                         <div class="all-products">
-                           
-                            <div class="product">
-                                <img src="images/product-1.jpeg" alt="">
-                                <div class="product-info">
-                                    <h4 class="product-title">Product 1</h4>
-                                    <p class="product-price">$29</p>
-                                    <a class="product-btn" href="#">Buy Now</a>
-                                </div>
-                            </div>
-                            <div class="product">
-                                <img src="images/product-2.jpeg" alt="">
-                                <div class="product-info">
-                                    <h4 class="product-title">Product 2</h4>
-                                    <p class="product-price">$29</p>
-                                    <a class="product-btn" href="#">Buy Now</a>
-                                </div>
-                            </div>
-                            <div class="product">
-                                <img src="images/product-3.jpeg" alt="">
-                                <div class="product-info">
-                                    <h4 class="product-title">Product 3</h4>
-                                    <p class="product-price">$29</p>
-                                    <a class="product-btn" href="#">Buy Now</a>
-                                </div>
-                            </div>
-                            <div class="product">
-                                <img src="images/product-4.jpeg" alt="">
-                                <div class="product-info">
-                                    <h4 class="product-title">Product 4</h4>
-                                    <p class="product-price">$29</p>
-                                    <a class="product-btn" href="#">Buy Now</a>
-                                </div>
-                            </div>
-                           
+                            
                         </div>
-                    </header>
                 </section>
 
                 <section class="products-list">
@@ -98,12 +64,6 @@
                     }
                 });
 
-                // Close menu on clicking outside the menu area
-                $(document).on('click', function(e) {
-                    if (!$(e.target).closest('.navigation').length) {
-                        $(".menu").slideUp(); // Closes the menu if the clicked element is outside the menu area
-                    }
-                });
             });
         </script>
 
