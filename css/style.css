@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
     /*background-color: var(--primary-color-white);*/
     background-color: transparent;
     position: relative;
-    transition: transparent-color 0.3s ease;
+    transition: transparent-color 1s ease;
     z-index: 1;
     height: 5.3rem;
 }
@@ -638,8 +638,8 @@ h1, h2, h3, h4, h5, h6 {
     left: 50%;
     transform: translateX(-50%);
     z-index: 200;
-    width: fit-content;
     width: -moz-fit-content;
+    width: fit-content;
 }
 
 .carousell .caro-btn {
@@ -951,6 +951,8 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 24px;
     color: var(--primary-color-darker);
     cursor: pointer;
+    background: transparent;
+    border: none;
 }
 
 .total {
