@@ -63,11 +63,12 @@ function loadProducts() {
         let newDiv = document.createElement('div');
         newDiv.classList.add('product');
         newDiv.innerHTML = `
-        <div class="product-box">
-        <img src="images//${value.image}" alt="" class="product-image">
+        <div class="product-box" id="${value.id}">
+        <img src="images//${value.image}" alt="" class="product-image" style="cursor: pointer" onclick="openProduct(this)">
             <div class="product-info">
                 <h4 class="product-title">${value.name}</h4>
-                <p class="product-price">$${value.price}</p>
+                <p class="product-price">${value.price} RON</p>
+                <p class="product-serial-no" style="display: none">${value.serial_no}</p>
                 <button class="product-btn" onclick="addCartClicked(this)">Add To Cart</button>
                 
             </div>
@@ -135,8 +136,9 @@ function ready() {
 }
 
 function removeCartItem(buttonClicked) {
-    buttonClicked.parentElement.parentElement.remove();
+    buttonClicked.parentElement.remove();
     updateTotal();
+    checkCartItems();
  }
 
  function quantityChanged(q) {
@@ -162,13 +164,19 @@ function addCartClicked(buttonAdd) {
         var productPrice = productInfo.querySelector(".product-price");
         var price = productPrice.innerText;
 
+        var product_serial_no = productInfo.querySelector(".product-serial-no");
+        var serial_no = product_serial_no.innerText;
+
         var productImg = productBox.querySelector(".product-image").src;
-        addProductToCart(title, price, productImg);
+        addProductToCart(title, price, productImg, serial_no);
         updateTotal();
+        checkCartItems();
     }
+
+    
 }
 
-function addProductToCart(title, price, productImg) {
+function addProductToCart(title, price, productImg, serial_no) {
     var cartContent = document.querySelector(".cart-content");
     var cartBox = document.createElement("div");
     cartBox.classList.add("cart-box");
@@ -191,6 +199,12 @@ function addProductToCart(title, price, productImg) {
     cartPrice.classList.add("cart-price");
     cartPrice.textContent = price;
     detailBox.appendChild(cartPrice);
+
+    var cartSerialNo = document.createElement("div");
+    cartSerialNo.classList.add("cart-serial-no");
+    cartSerialNo.style.display = "none";
+    cartSerialNo.textContent = serial_no;
+    detailBox.appendChild(cartSerialNo);
 
     var quantityInput = document.createElement("input");
     quantityInput.type = "number";
@@ -228,12 +242,48 @@ function addProductToCart(title, price, productImg) {
         var cartBox = cartBoxes[i];
         var priceElement = cartBox.getElementsByClassName("cart-price")[0];
         var quantityElement = cartBox.getElementsByClassName("cart-quantity")[0];
-        var price = parseFloat(priceElement.innerText.replace("$", ""));
+        var price = parseFloat(priceElement.innerText.replace(" RON", ""));
         var quantity = quantityElement.value;
         total = total + (price * quantity);
 
         total = Math.round(total * 100) / 100;
     }
 
-    document.getElementsByClassName("total-price")[0].innerText = "$" + total;
+    document.getElementsByClassName("total-price")[0].innerText = total + " RON";
  }
+
+function buynow() {
+    // window.location.href = "cart.html" -on the same page
+    window.open('cart.html', '_blank'); // new page
+}
+
+function openProduct(img) {
+    var productBox = img.parentNode; // Get the immediate parent container
+
+    while (productBox && !productBox.classList.contains('product-box')) {
+        productBox = productBox.parentNode; // Traverse up until product-info class is found
+    }
+
+    var id = productBox.id;
+
+    window.location.href = "product.html?id=" + id;
+}
+
+function checkCartItems() {
+    var cartContent = document.querySelector(".cart-content");
+    var logoCartImg = document.querySelector(".logo-cart");
+
+    if (cartContent !== null) {
+        if (cartContent.children.length > 0) {
+            var baseURL = window.location.origin;
+            var fullPath = baseURL + "images/logo-cart-full-black.png";
+            logoCartImg.src = fullPath;
+        } else {
+            var baseURL = window.location.origin;
+            var fullPath = baseURL + "images/logo-cart-empty-black.png";
+            logoCartImg.src = fullPath;
+        }
+    }
+}
+
+checkCartItems();

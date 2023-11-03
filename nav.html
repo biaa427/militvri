@@ -24,7 +24,7 @@
             
                         <li>
                             <button class="cart-btn" id="cart-btn" aria-label="View Shopping Cart" onclick="openCart()">
-                                <img src="images/logo-cart-empty.png" alt="" class="logo-cart">
+                                <img src="images/logo-cart-empty-black.png" alt="" class="logo-cart">
                             </button>
                         </li>
                         <li><a href="contact.html">CONTACT</a></li>
@@ -40,6 +40,7 @@
                             <div class="detail-box">
                                 <div class="cart-ptoduct-title">PRODUCT 1</div>
                                 <div class="cart-price">$29.5</div>
+                                <div class="cart-serial-no">291</div>
                                 <input type="number" value="1" class="cart-quantity" id="cart-quantity" title="quantity" placeholder="" onchange="quantityChanged(this)">
                             </div>
                             <button type="button" class="cart-remove" aria-label="Remove item from cart" onclick="removeCartItem(this)">
@@ -51,9 +52,9 @@
                     </div>
                     <div class="total">
                         <div class="total-title">Total</div>
-                        <div class="total-price">$0</div>
+                        <div class="total-price">0 RON</div>
                     </div>
-                    <button type="button" class="btn-buy">Buy Now</button>
+                    <button type="button" class="btn-buy" onclick="buynow()">Buy Now</button>
                     <button type="button" class="close-cart" id="close-cart" aria-label="Close Shopping Cart" onclick="closeCart()">
                         <i class='bx bx-x'></i>
                     </button>

@@ -10,6 +10,22 @@
         <title>CART</title>
     </head>
     <body>
+        <div class="shared-container">
+            <div id="navigationContainer"></div>
+            
+            
+        </div>  
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="js/script.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(".toggle-box").click(function(e) {
+                    e.stopPropagation(); // Prevents the click event from propagating to parent elements
+                    $(".menu").stop().slideToggle();
+                });
+            });
+        </script>
 
     </body>
 </html>

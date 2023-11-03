@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
     /*background-color: var(--primary-color-white);*/
     background-color: transparent;
     position: relative;
-    transition: transparent-color 1s ease;
+    transition: transparent-color 0.3s ease;
     z-index: 1;
     height: 5.3rem;
 }
@@ -52,11 +52,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .start-page .navigation .logo-cart {
-    content: url(../images/logo-cart-white.png);
+    content: url(../images/logo-cart-empty-white.png);
 }
 
 .shared-container .navigation .logo-cart {
-    content: url(../images/logo-cart-empty.png);
+    content: url(../images/logo-cart-empty-black.png);
 }
 
 .navigation > .container {
@@ -149,7 +149,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navigation:hover .logo-cart {
-    content: url(../images/logo-cart-empty.png);
+    content: url(../images/logo-cart-empty-black.png);
 }
 
 .logo-cart {
@@ -234,7 +234,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .navigation:hover .logo-cart {
-        content: url(../images/logo-cart-empty.png); /* Initial cart logo */
+        content: url(../images/logo-cart-empty-black.png); /* Initial cart logo */
     }
 }
 
@@ -528,7 +528,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .shared-container .navigation:hover .logo-cart {
-    content: url(../images/logo-cart-empty.png); /* Initial cart logo */
+    content: url(../images/logo-cart-empty-black.png); /* Initial cart logo */
 }
 
 .shared-container .navigation {
@@ -544,7 +544,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .shared-container .navigation:hover .logo-cart {
-    content: url(../images/logo-cart-empty.png);
+    content: url(../images/logo-cart-empty-black.png);
 }
 
 /* ---------- BRIGHT SIDE ---------- */
