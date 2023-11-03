@@ -104,6 +104,20 @@ h1, h2, h3, h4, h5, h6 {
     flex: 1;
 }
 
+.menu .cart-count {
+    position: relative;
+    top: -2.3rem;
+    left: 2rem;
+    background-color: var(--primary-color-black);
+    border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
+    text-align: center;
+    font-size: 0.7rem;
+    color: var(--primary-color-white);
+    justify-content: center;
+}
+
 .menu li a,
 .menu li button {
     display: block;

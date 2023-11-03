@@ -23,9 +23,11 @@
                         <li><a href="darkside.html">THE DARK SIDE</a></li>
             
                         <li>
-                            <button class="cart-btn" id="cart-btn" aria-label="View Shopping Cart" onclick="openCart()">
-                                <img src="images/logo-cart-empty-black.png" alt="" class="logo-cart">
+                            <button type="button" class="cart-btn" id="cart-btn" aria-label="View Shopping Cart" onclick="openCart()">
+                                <img src="images/logo-cart-empty-black.png" alt="" class="logo-cart" id="logo-carts">
+                                <div class="cart-count">0</div>
                             </button>
+                            
                         </li>
                         <li><a href="contact.html">CONTACT</a></li>
                         <li><a href="#">OUR STORY</a></li>
@@ -34,21 +36,7 @@
                 <div class="cart">
                     <h2 class="cart-title">Your Cart</h2>
                     <div class="cart-content">
-                        <!--
-                        <div class="cart-box">
-                            <img src="images/product-1.jpeg" alt="" class="cart-img">
-                            <div class="detail-box">
-                                <div class="cart-ptoduct-title">PRODUCT 1</div>
-                                <div class="cart-price">$29.5</div>
-                                <div class="cart-serial-no">291</div>
-                                <input type="number" value="1" class="cart-quantity" id="cart-quantity" title="quantity" placeholder="" onchange="quantityChanged(this)">
-                            </div>
-                            <button type="button" class="cart-remove" aria-label="Remove item from cart" onclick="removeCartItem(this)">
-                                <i class='bx bxs-trash'></i>
-                            </button>
-                            
-                        </div>
-                        -->
+                       
                     </div>
                     <div class="total">
                         <div class="total-title">Total</div>

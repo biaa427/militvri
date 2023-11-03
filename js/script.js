@@ -69,7 +69,7 @@ function loadProducts() {
                 <h4 class="product-title">${value.name}</h4>
                 <p class="product-price">${value.price} RON</p>
                 <p class="product-serial-no" style="display: none">${value.serial_no}</p>
-                <button class="product-btn" onclick="addCartClicked(this)">Add To Cart</button>
+                <button type="button" class="product-btn" onclick="addCartClicked(this)">Add To Cart</button>
                 
             </div>
         </div>
@@ -86,11 +86,21 @@ loadProducts();
 function openCart() {
     const cart = document.querySelector('.cart');
     cart.classList.add("active");
+
+    var brightSide = document.querySelector(".bright-side");
+    var navigation = document.querySelector(".navigation");
+    brightSide.style.width = "calc(100% - 360px)";
+    navigation.style.width = "calc(100% - 360px)";
 };
 
 function closeCart() {
     const cart = document.querySelector('.cart');
     cart.classList.remove("active");
+
+    var brightSide = document.querySelector(".bright-side");
+    var navigation = document.querySelector(".navigation");
+    brightSide.style.width = "100%";
+    navigation.style.width = "100%";
 };
 
 if (document.readyState == "loading") {
@@ -138,6 +148,7 @@ function ready() {
 function removeCartItem(buttonClicked) {
     buttonClicked.parentElement.remove();
     updateTotal();
+    cartCountItems();
     checkCartItems();
  }
 
@@ -146,6 +157,7 @@ function removeCartItem(buttonClicked) {
         q.value = 1;
     }
     updateTotal();
+    cartCountItems();
 }
 
 function addCartClicked(buttonAdd) {
@@ -170,10 +182,11 @@ function addCartClicked(buttonAdd) {
         var productImg = productBox.querySelector(".product-image").src;
         addProductToCart(title, price, productImg, serial_no);
         updateTotal();
+        cartCountItems();
         checkCartItems();
     }
 
-    
+    openCart();
 }
 
 function addProductToCart(title, price, productImg, serial_no) {
@@ -272,18 +285,40 @@ function openProduct(img) {
 function checkCartItems() {
     var cartContent = document.querySelector(".cart-content");
     var logoCartImg = document.querySelector(".logo-cart");
+    var sharedContainer = document.querySelector(".shared-container");
+    var navigation = sharedContainer.querySelector(".navigation");
+    var logoCart = navigation.querySelector(".logo-cart");
 
     if (cartContent !== null) {
         if (cartContent.children.length > 0) {
-            var baseURL = window.location.origin;
-            var fullPath = baseURL + "images/logo-cart-full-black.png";
-            logoCartImg.src = fullPath;
+            logoCartImg.src = "images/logo-cart-full-black.png";
+            logoCart.style.setProperty("content", "url(../images/logo-cart-full-black.png)")
         } else {
-            var baseURL = window.location.origin;
-            var fullPath = baseURL + "images/logo-cart-empty-black.png";
-            logoCartImg.src = fullPath;
+            logoCartImg.src = "images/logo-cart-empty-black.png";
+            logoCart.style.setProperty("content", "url(../images/logo-cart-empty-black.png)")
         }
     }
 }
 
-checkCartItems();
+function cartCountItems() {
+    // Select the cart content element
+    var cartContent = document.querySelector('.cart-content');
+
+    // Select the cart count element
+    var cartCount = document.querySelector('.cart-count');
+    var count = 0;
+
+    // Select all divs with the class "cart-box" within the cart content
+    var cartBoxes = cartContent.querySelectorAll('.cart-box');
+    for (var i = 0; i < cartBoxes.length; i++) { 
+        var itemQuantity = parseInt(cartBoxes[i].querySelector(".cart-quantity").value, 10);
+        count = count + itemQuantity;
+    }
+
+    // Get the count of cart boxes
+    var numberOfItems = cartBoxes.length;
+
+    // Update the cart count element with the number of items
+    cartCount.textContent = count;
+    console.log(count);
+}
