@@ -20,21 +20,5 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="js/script.js"></script>
-        <script type="text/javascript">
-            $(document).ready(function() {
-                $(".toggle-box").click(function(e) {
-                    e.stopPropagation(); // Prevents the click event from propagating to parent elements
-                    $(".menu").stop().slideToggle();
-                });
-
-                // Check window width and handle menu item clicks
-                $(".menu li a").click(function() {
-                    if ($(window).width() < 1100) {
-                        $(".menu").slideUp(); // Closes the menu when a menu item is clicked on smaller screens
-                    }
-                });
-
-            });
-        </script>
     </body>
 </html>
