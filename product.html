@@ -12,11 +12,63 @@
     <body>
         <div class="shared-container">
             <div id="navigationContainer"></div>
-
             
+            <div class="product-container">
+                <div class="detailPage-product">
+                    <div class="detailPage-gallery">
+                        <div class="controls">
+                            <span class="imgBtn active"></span>
+                            <span class="imgBtn"></span>
+                            <span class="imgBtn"></span>
+                        </div>
+                    </div>
+                    <div class="detailPage-details">
+                        <div class="product-info">
+                            
+                        </div>
+                        <div class="product-options">
+                            <form>
+                                <div class="size-select">
+                                    <p>Size</p>
+                                    <label for="xsmall">
+                                        <input type="radio" name="size" id="xsmall" title="XS">
+                                        <span>XS</span>
+                                    </label>
+                                    <label for="small">
+                                        <input type="radio" name="size" id="small" title="S">
+                                        <span>S</span>
+                                    </label>
+                                    <label for="medium">
+                                        <input type="radio" name="size" id="medium" title="M">
+                                        <span>M</span>
+                                    </label>
+                                    <label for="large">
+                                        <input type="radio" name="size" id="large" title="L">
+                                        <span>L</span>
+                                    </label>
+                                    <label for="xlarge">
+                                        <input type="radio" name="size" id="xlarge" title="XL">
+                                        <span>XL</span>
+                                    </label>
+                                </div>
+
+                                <div class="quantity-select">
+                                    <p>Quantity</p>
+                                    <input type="number" value="1" title="quantity">
+                                </div>
+
+                                <button type="button" class="product-btn" onclick="addToCart(this)">Add To Cart</button>
+                            </form>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="js/script.js"></script>
+        
     </body>
 </html>

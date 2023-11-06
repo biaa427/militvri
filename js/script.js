@@ -98,17 +98,16 @@ function loadProducts() {
     })    
 }
 
-loadProducts();
 
 /* CART */
 
 function openCart() {
     const cart = document.querySelector('.cart');
     cart.classList.add("active");
-
+    
     var brightSide = document.querySelector(".bright-side");
     var navigation = document.querySelector(".navigation");
-    brightSide.style.width = "calc(100% - 360px)";
+    //brightSide.style.width = "calc(100% - 360px)";
     navigation.style.width = "calc(100% - 360px)";
 };
 
@@ -118,30 +117,14 @@ function closeCart() {
 
     var brightSide = document.querySelector(".bright-side");
     var navigation = document.querySelector(".navigation");
-    brightSide.style.width = "100%";
+    //brightSide.style.width = "100%";
     navigation.style.width = "100%";
 };
 
 if (document.readyState == "loading") {
     document.addEventListener("DOMContentLoaded", ready);
 } else {
-    var removeCartButtons = document.getElementsByClassName("cart-remove");
-    for (var i = 0; i < removeCartButtons.length; i++) {
-        var button = removeCartButtons[i];
-        button.addEventListener("click", removeCartItem);
-    }
-
-    var quantityInputs = document.getElementsByClassName("cart-quantity");
-    for (var j = 0; j < quantityInputs.length; j++) {
-        var input = quantityInputs[j];
-        input.addEventListener("change", quantityChanged);
-    }
-
-    var addCart = document.getElementsByClassName("product-btn");
-    for (var k = 0; k < addCart.length; k++) {
-        var button = addCart[i];
-        button.addEventListener("click", addCartClicked);
-    }
+    ready();
 }
 
 function ready() {
@@ -159,8 +142,8 @@ function ready() {
 
     var addCart = document.getElementsByClassName("product-btn");
     for (var k = 0; k < addCart.length; k++) {
-        var button = addCart[i];
-        button.addEventListener("click", addCartClicked);
+        var buttonAdd = addCart[k];
+        buttonAdd.addEventListener("click", addCartClicked);
     }
 }
 
@@ -199,7 +182,7 @@ function removeCartItem(buttonClicked) {
     var cartSerialNo = detailBox.querySelector('.cart-serial-no');
     var serialNumber = cartSerialNo.textContent;
 
-    const cartProductIndex = cart.findIndex(product => product.serial_no === parseInt(serialNumber, 10));
+    const cartProductIndex = cart.findIndex(product => product.serial_no === serialNumber);
     if (cartProductIndex !== -1) {
         cart[cartProductIndex].quantity = parseInt(q.value, 10);
     }
@@ -209,32 +192,45 @@ function removeCartItem(buttonClicked) {
 }
 
 function addCartClicked(buttonAdd) {
-    var productBox = buttonAdd.parentNode; // Get the immediate parent container
-
+    var productBox = buttonAdd.parentElement;
     while (productBox && !productBox.classList.contains('product-box')) {
-        productBox = productBox.parentNode; // Traverse up until product-info class is found
+        productBox = productBox.parentElement;
     }
 
     if (productBox) {
-        var productInfo = productBox.querySelector(".product-info");
+        var productTitle = productBox.querySelector('.product-title').innerText;
+        var productPrice = productBox.querySelector('.product-price').innerText;
+        var productSerial = productBox.querySelector('.product-serial-no').innerText;
+        var productImg = productBox.querySelector('.product-image').src;
 
-        var productTitle = productInfo.querySelector(".product-title");
-        var title = productTitle.innerText;
-        
-        var productPrice = productInfo.querySelector(".product-price");
-        var price = productPrice.innerText;
-
-        var product_serial_no = productInfo.querySelector(".product-serial-no");
-        var serial_no = product_serial_no.innerText;
-
-        var productImg = productBox.querySelector(".product-image").src;
-        addProductToCart(title, price, productImg, serial_no);
+        addProductToCart(productTitle, productPrice, productImg, productSerial);
         updateTotal();
         cartCountItems();
         checkCartItems();
+
+        openCart();
+    }
+}
+
+function addToCart(btnClicked) {
+    /*var productBox = buttonAdd.parentElement;
+    while (productBox && !productBox.classList.contains('product-box')) {
+        productBox = productBox.parentElement;
     }
 
-    openCart();
+    if (productBox) {
+        var productTitle = productBox.querySelector('.product-title').innerText;
+        var productPrice = productBox.querySelector('.product-price').innerText;
+        var productSerial = productBox.querySelector('.product-serial-no').innerText;
+        var productImg = productBox.querySelector('.product-image').src;
+
+        addProductToCart(productTitle, productPrice, productImg, productSerial);
+        updateTotal();
+        cartCountItems();
+        checkCartItems();
+
+        openCart();
+    }*/
 }
 
 function addProductToCart(title, price, productImg, serial_no) {
@@ -336,26 +332,29 @@ function addProductToCart(title, price, productImg, serial_no) {
 
     saveCartToLocalStorage(); // Save the updated cart to localStorage
 
-    displayCartItems(); // Refresh the cart display
+    // Clear the cart content to avoid displaying all items
+    document.querySelector('.cart-content').innerHTML = '';
+    
+    // Display the items in the cart from local storage
+    displayCartItems();
 }
 
+function updateTotal() {
+   var cartBoxes = document.getElementsByClassName("cart-box");
+   var total = 0;
+   for (var i = 0; i < cartBoxes.length; i++) {
+       var cartBox = cartBoxes[i];
+       var priceElement = cartBox.getElementsByClassName("cart-price")[0];
+       var quantityElement = cartBox.getElementsByClassName("cart-quantity")[0];
+       var price = parseFloat(priceElement.innerText.replace(" RON", ""));
+       var quantity = quantityElement.value;
+       total = total + (price * quantity);
 
- function updateTotal() {
-    var cartBoxes = document.getElementsByClassName("cart-box");
-    var total = 0;
-    for (var i = 0; i < cartBoxes.length; i++) {
-        var cartBox = cartBoxes[i];
-        var priceElement = cartBox.getElementsByClassName("cart-price")[0];
-        var quantityElement = cartBox.getElementsByClassName("cart-quantity")[0];
-        var price = parseFloat(priceElement.innerText.replace(" RON", ""));
-        var quantity = quantityElement.value;
-        total = total + (price * quantity);
+       total = Math.round(total * 100) / 100;
+   }
 
-        total = Math.round(total * 100) / 100;
-    }
-
-    document.getElementsByClassName("total-price")[0].innerText = total + " RON";
- }
+   document.getElementsByClassName("total-price")[0].innerText = total + " RON";
+}
 
 function buynow() {
     // window.location.href = "cart.html" -on the same page
@@ -377,19 +376,16 @@ function openProduct(img) {
 function checkCartItems() {
     var cartContent = document.querySelector(".cart-content");
     var logoCartImg = document.querySelector(".logo-cart");
-    var sharedContainer = document.querySelector(".shared-container");
-    var navigation = sharedContainer.querySelector(".navigation");
-    var logoCart = navigation.querySelector(".logo-cart");
-    var cartBtn = navigation.querySelector(".cart-btn");
+    var cartBtn = document.querySelector(".cart-btn");
 
     if (cartContent !== null) {
         if (cartContent.children.length > 0) {
             logoCartImg.src = "images/logo-cart-full-black.png";
-            logoCart.style.setProperty("content", "url(../images/logo-cart-full-black.png)")
+            logoCartImg.style.setProperty("content", "url(../images/logo-cart-full-black.png)")
             cartBtn.style.padding = "0.2rem 0.93rem";
         } else {
             logoCartImg.src = "images/logo-cart-empty-black.png";
-            logoCart.style.setProperty("content", "url(../images/logo-cart-empty-black.png)")
+            logoCartImg.style.setProperty("content", "url(../images/logo-cart-empty-black.png)")
             cartBtn.style.padding = "0.5rem 0.93rem";
         }
     }
@@ -416,15 +412,19 @@ function cartCountItems() {
 // Display cart items based on the serial numbers
 function displayCartItems() {
     const cartContent = document.querySelector(".cart-content");
+    cart = JSON.parse(localStorage.getItem('cart')) || [];
 
+    console.log(cartContent);
+    console.log(cart);
+    
     cart.forEach(cartProduct => {
         const foundProduct = products.find(product => product.serial_no === cartProduct.serial_no);
 
         if (foundProduct) {
-            if (cartContent !== null) {
+            if (cartContent) {
                 var cartBox = document.createElement("div");
                 cartBox.classList.add("cart-box");
-    
+        
                 var img = document.createElement("img");
                 img.src = "images/" + foundProduct.image;
                 img.alt = foundProduct.name;
@@ -505,19 +505,89 @@ function displayCartItems() {
                 removeButton.appendChild(removeIcon);
                 cartBox.appendChild(removeButton);
     
-                cartContent.appendChild(cartBox); // Append the product details to the cart content
-            }
+                cartContent.appendChild(cartBox);
+
+                checkCartItems();
+                cartCountItems();
+            }  
         }
+
+        
     });
 }
 
-window.onload = function() {
-    const storedCart = localStorage.getItem('cart');
-    if (storedCart) {
-        cart = JSON.parse(storedCart);
-        displayCartItems();
-        //checkCartItems();
-        cartCountItems();
+window.addEventListener("load", displayCartItems);
+
+/* product page */
+
+
+// Get the full URL
+const url = window.location.href;
+var sn = 0;
+
+// Parse the URL to extract the 'sn' parameter value
+const urlParts = url.split('?');
+if (urlParts.length > 1) {
+    const params = urlParts[1].split('&');
+    for (const param of params) {
+        const [key, value] = param.split('=');
+        if (key === 'sn') {
+            sn = decodeURIComponent(value);
+            break;
+        }
     }
 }
-8
+
+// Find the product with the matching serial number
+const productWithSN = products.find(product => product.serial_no === sn);
+
+if (productWithSN) {
+    //var productImg = document.querySelector(".image-left");
+    var imageLeft = document.querySelector(".detailPage-gallery");
+    var productImg = document.createElement("img");
+    productImg.setAttribute("id", "productImg");
+    productImg.src = "images/" + productWithSN.image;
+    productImg.setAttribute("alt", "");
+    imageLeft.appendChild(productImg);
+    
+    var details = document.querySelector(".product-info");
+    var titleProduct = document.createElement("h1");
+    titleProduct.innerHTML = productWithSN.name;
+    details.appendChild(titleProduct);
+
+    var priceProduct = document.createElement("h2");
+    priceProduct.innerHTML = productWithSN.price + " RON";
+    details.appendChild(priceProduct);
+
+    var description = document.createElement("p");
+    description.innerHTML = "Elevate your casual wardrobe with our Classic Comfort Tee. Crafted with premium, ultra-soft cotton, this versatile t-shirt offers a perfect blend of comfort and style.";
+    details.appendChild(description);
+
+    let btnImages = document.getElementsByClassName("imgBtn");
+
+    btnImages[0].onclick = function() {
+        productImg.src = "images/" + productWithSN.image;
+        for (bt of btnImages) {
+            bt.classList.remove("active");
+        }
+        this.classList.add("active");
+    }
+    btnImages[1].onclick = function() {
+        productImg.src = "images/2.jpg";
+        for (bt of btnImages) {
+            bt.classList.remove("active");
+        }
+        this.classList.add("active");
+    }
+    btnImages[2].onclick = function() {
+        productImg.src = "images/3.jpg";
+        for (bt of btnImages) {
+            bt.classList.remove("active");
+        }
+        this.classList.add("active");
+    }
+
+
+} else {
+    
+}
