@@ -178,9 +178,12 @@ function removeCartItem(buttonClicked) {
     updateTotal();
     cartCountItems();
 
-    var detailBox = q.parentElement;
-    var cartSerialNo = detailBox.querySelector('.cart-serial-no');
-    var serialNumber = cartSerialNo.textContent;
+    if (q.classList == "cart-quantity") {
+        var detailBox = q.parentElement;
+        var cartSerialNo = detailBox.querySelector('.cart-serial-no');
+        var serialNumber = cartSerialNo.textContent;
+    }
+    
 
     const cartProductIndex = cart.findIndex(product => product.serial_no === serialNumber);
     if (cartProductIndex !== -1) {
