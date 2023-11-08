@@ -203,7 +203,7 @@ function addCartClicked(buttonAdd) {
         var productSerial = productBox.querySelector('.product-serial-no').innerText;
         var productImg = productBox.querySelector('.product-image').src;
 
-        addProductToCart(productTitle, productPrice, productImg, productSerial);
+        addProductToCart(productTitle, productPrice, productImg, productSerial, 1);
         updateTotal();
         cartCountItems();
         checkCartItems();
@@ -212,28 +212,7 @@ function addCartClicked(buttonAdd) {
     }
 }
 
-function addToCart(btnClicked) {
-    /*var productBox = buttonAdd.parentElement;
-    while (productBox && !productBox.classList.contains('product-box')) {
-        productBox = productBox.parentElement;
-    }
-
-    if (productBox) {
-        var productTitle = productBox.querySelector('.product-title').innerText;
-        var productPrice = productBox.querySelector('.product-price').innerText;
-        var productSerial = productBox.querySelector('.product-serial-no').innerText;
-        var productImg = productBox.querySelector('.product-image').src;
-
-        addProductToCart(productTitle, productPrice, productImg, productSerial);
-        updateTotal();
-        cartCountItems();
-        checkCartItems();
-
-        openCart();
-    }*/
-}
-
-function addProductToCart(title, price, productImg, serial_no) {
+function addProductToCart(title, price, productImg, serial_no, quantity) {
 
     var cartContent = document.querySelector('.cart-content');
     var cartBox = document.createElement("div");
@@ -266,7 +245,7 @@ function addProductToCart(title, price, productImg, serial_no) {
     
     var quantityInput = document.createElement("input");
     quantityInput.type = "number";
-    quantityInput.value = 1;
+    quantityInput.value = quantity;
     quantityInput.classList.add("cart-quantity");
     quantityInput.setAttribute("title", "quantity");
     quantityInput.placeholder = "";
@@ -326,7 +305,7 @@ function addProductToCart(title, price, productImg, serial_no) {
         price: price,
         serial_no: serial_no,
         image: productImg,
-        quantity: 1, // Initialize quantity to 1
+        quantity: quantity, 
     };
     cart.push(product);
 
@@ -414,9 +393,6 @@ function displayCartItems() {
     const cartContent = document.querySelector(".cart-content");
     cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    console.log(cartContent);
-    console.log(cart);
-    
     cart.forEach(cartProduct => {
         const foundProduct = products.find(product => product.serial_no === cartProduct.serial_no);
 
@@ -441,7 +417,7 @@ function displayCartItems() {
     
                 var cartPrice = document.createElement("div");
                 cartPrice.classList.add("cart-price");
-                cartPrice.textContent = foundProduct.price;
+                cartPrice.textContent = foundProduct.price + " RON";
                 detailBox.appendChild(cartPrice);
     
                 var cartSerialNo = document.createElement("div");
@@ -590,4 +566,21 @@ if (productWithSN) {
 
 } else {
     
+}
+
+
+function addToCart(btnClicked) {
+    if (productWithSN) {
+        var productTitle = document.querySelector(".product-info h1");
+        var productPrice = document.querySelector(".product-info h2");
+        var productImg = document.querySelector(".detailPage-gallery img");
+        var productQuantity = document.querySelector(".quantity-select input").value;
+
+        addProductToCart(productTitle.innerText, productPrice.innerText, productImg.src, productWithSN.serial_no, productQuantity);
+        updateTotal();
+        cartCountItems();
+        checkCartItems();
+
+        openCart();
+    }
 }
