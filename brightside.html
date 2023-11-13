@@ -41,9 +41,47 @@
                         </div>
                 </section>
 
+                <h1>Products</h1>
+                <p>20 products</p>
+
                 <section class="products-list">
-                    <h1>Products</h1>
-                    <p>20 products</p>
+                    
+
+                    <div class="filters">
+                        <div>
+                            <label for="category-filter">Category:</label>
+                            <select id="category-filter">
+                                <option value="all">All Categories</option>
+                                <option value="tshirt">T-Shirt</option>
+                                <option value="hoodie">Hoodie</option>
+                                <!-- Add more categories as needed -->
+                            </select>
+                        </div>
+                        <div>
+                            <label for="price-range-filter">Price Range:</label>
+                            <select id="price-range-filter">
+                                <option value="all">All Prices</option>
+                                <option value="0-50">0 - 50 RON</option>
+                                <option value="50-100">50 - 100 RON</option>
+                                <!-- Add more price ranges as needed -->
+                            </select>
+                        </div>
+                        <div>
+                            <label for="size-filter">Size:</label>
+                            <select id="size-filter">
+                                <option value="all">All Sizes</option>
+                                <option value="XS">XS</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                                <!-- Add more sizes as needed -->
+                            </select>
+                        </div>
+                    </div>
+                    <div class="product-list" id="product-list">
+                        <!-- Product items will be dynamically added here -->
+                    </div>
                 </section>
             </div>
         </div>  

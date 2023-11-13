@@ -43,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {
     position: fixed;
     width: 100%;
     transition: transparent-color 0.3s ease;
-    z-index: 1;
+    z-index: 1000;
     height: 5.3rem;
 }
 
@@ -649,6 +649,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 2.1rem;
     font-weight: 700;
     padding-bottom: 1.25rem;
+    z-index: 1;
 }
 
 .carousell p {
@@ -1352,5 +1353,132 @@ h1, h2, h3, h4, h5, h6 {
 @media screen and (max-width: 1250px) {
     .wrapper {
         max-width: 90%;
+    }
+}
+
+/* Cookies */
+
+.wrapper-cookies {
+    position: fixed;
+    bottom: 50px;
+    left: -350px;
+    max-width: 340px;
+    width: 100%;
+    background: var(--background-color-light);
+    border-radius: 8px;
+    padding: 15px 25px 22px;
+    transition: right 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper-cookies.show {
+    left: 20px;
+}
+
+.wrapper-cookies header i {
+    color: #029b8c;
+    font-size: 32px;
+}
+
+.wrapper-cookies header h2 {
+    color: #029b8c;
+    font-weight: 500;
+}
+
+.wrapper-cookies .data-cookies {
+    margin-top: 16px;
+}
+
+.wrapper-cookies .data-cookies p {
+    color: #333;
+    font-size: 16px;
+}
+
+.data-cookies p a {
+    color: #029b8c;
+    text-decoration: none;
+}
+
+.data-cookies p a:hover {
+    text-decoration: underline;
+}
+
+.wrapper-cookies .buttons-cookies {
+    margin-top: 16px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.buttons-cookies .buttonCookie {
+    border: none;
+    color: #fff;
+    padding: 8px 0;
+    border-radius: 4px;
+    background: #029b8c;
+    cursor: pointer;
+    width: calc(100% / 2 - 10px);
+    transition: all 0.2s ease;
+}
+
+.buttons-cookies #acceptBtn:hover {
+    background-color: #034bf1;
+}
+
+#declineBtn {
+    border: 2px solid #029b8c;
+    background-color: #fff;
+    color: #029b8c;
+}
+
+#declineBtn:hover {
+    background-color: #029b8c;
+    color: #fff;
+}
+
+/* PRODUCT LIST */
+
+.products-list {
+    display: flex;
+    flex-wrap: wrap; /* Enable wrapping for responsiveness */
+}
+
+.filters {
+    flex: 0 0 30%; /* Set a fixed width for the filters (adjust as needed) */
+    box-sizing: border-box;
+    padding: 20px; /* Add padding as needed */
+}
+
+.product-list {
+    flex: 1; /* Take up remaining space */
+    box-sizing: border-box;
+    padding: 20px; /* Add padding as needed */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product-item {
+    width: calc(33.33% - 10px); /* Three columns with some spacing */
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .products-list {
+        flex-direction: column;
+    }
+
+    .filters,
+    .product-list {
+        flex: auto; /* Take up the full width in a column layout */
+        width: 100%;
+    }
+
+    .product-item {
+        width: 100%; /* Full width for each product on smaller screens */
     }
 }

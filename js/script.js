@@ -1,3 +1,33 @@
+/* cookies */
+
+/*
+const cookieBox = document.querySelector(".wrapper-cookies");
+const buttonsCookies = document.querySelectorAll(".buttonCookie");
+
+const executeCodes = () => {
+    //if cookie contains militvri it will be returned and below of this code will not run
+    //if (document.cookie.includes("militvri")) return;
+    if (!document.cookie.includes("cookieBy=militvri")) {
+        cookieBox.classList.add("show");
+
+        buttonsCookies.forEach((button) => {
+            button.addEventListener("click", () => {
+                cookieBox.classList.remove("show");
+
+                // if button has acceptBtn id
+                if (button.id == "acceptBtn") {
+                    // set cookies for 1 month. 60 = 1 min, 60 = 1 hour, 24 = 1 day, 30 = 30 days
+                    document.cookie = "cookieBy=militvri; max-age=" + 60 * 60 * 24 * 30;
+                }
+            });
+        });
+    }
+};
+
+//executeCodes function will be called on webpage load
+window.addEventListener("load", executeCodes);
+*/
+
 /* hamburger menu */
 
 $(document).ready(function() {
@@ -51,27 +81,35 @@ let products = [
         image: 'product-1.jpeg',
         price: 29,
         serial_no: "135",
+        category: "tshirt",
+        size: "L",
     },
     {
         id: 2,
         name: 'PRODUCT NAME 2',
         image: 'product-2.jpeg',
         price: 29,
-        serial_no: "222"
+        serial_no: "222",
+        category: "hoodie",
+        size: "L",
     },
     {
         id: 3,
         name: 'PRODUCT NAME 3',
         image: 'product-3.jpeg',
         price: 29,
-        serial_no: "210"
+        serial_no: "210",
+        category: "tshirt",
+        size: "XS",
     },
     {
         id: 4,
         name: 'PRODUCT NAME 4',
         image: 'product-4.jpeg',
         price: 29,
-        serial_no: "658"
+        serial_no: "658",
+        category: "tshirt",
+        size: "M",
     },
 ];
 
@@ -95,7 +133,9 @@ function loadProducts() {
         `;
 
         list.appendChild(newDiv);
-    })    
+    })
+    
+    displayProducts(products);
 }
 
 
@@ -630,7 +670,6 @@ if (productWithSN) {
     
 }
 
-
 function addToCart(btnClicked) {
     if (productWithSN) {
         var productTitle = document.querySelector(".product-info h1");
@@ -645,4 +684,55 @@ function addToCart(btnClicked) {
 
         openCart();
     }
+}
+
+/* list all products */
+
+// Sample product data (replace this with your actual data)
+
+
+function displayProducts(productsToDisplay) {
+    const productListContainer = document.getElementById('product-list');
+    productListContainer.innerHTML = ''; // Clear existing content
+
+    productsToDisplay.forEach(product => {
+        const productItem = document.createElement('div');
+        productItem.classList.add('product-item');
+        productItem.innerHTML = `
+        <img src="images//${product.image}" alt="" class="product-image" style="cursor: pointer">
+            <h3>${product.name}</h3>
+            <p>Category: ${product.category}</p>
+            <p>Price: ${product.price} RON</p>
+            <p>Size: ${product.size}</p>
+        `;
+        productListContainer.appendChild(productItem);
+    });
+}
+
+// Add event listeners for filters
+document.getElementById('category-filter').addEventListener('change', filterProducts);
+document.getElementById('price-range-filter').addEventListener('change', filterProducts);
+document.getElementById('size-filter').addEventListener('change', filterProducts);
+
+function filterProducts() {
+    const categoryFilter = document.getElementById('category-filter').value;
+    const priceRangeFilter = document.getElementById('price-range-filter').value;
+    const sizeFilter = document.getElementById('size-filter').value;
+
+    // Apply filters to the products
+    const filteredProducts = products.filter(product => {
+        return (
+            (categoryFilter === 'all' || product.category === categoryFilter) &&
+            (priceRangeFilter === 'all' || checkPriceRange(product.price, priceRangeFilter)) &&
+            (sizeFilter === 'all' || product.size === sizeFilter)
+        );
+    });
+
+    // Update the displayed product list
+    displayProducts(filteredProducts);
+}
+
+function checkPriceRange(price, range) {
+    const [min, max] = range.split('-');
+    return price >= parseInt(min, 10) && price <= parseInt(max, 10);
 }
