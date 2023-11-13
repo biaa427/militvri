@@ -50,7 +50,7 @@ let products = [
         name: 'PRODUCT NAME 1',
         image: 'product-1.jpeg',
         price: 29,
-        serial_no: "135"
+        serial_no: "135",
     },
     {
         id: 2,
@@ -140,6 +140,12 @@ function ready() {
         input.addEventListener("change", quantityChanged);
     }
 
+    var sizeInputs = document.getElementsByClassName("cart-size");
+    for (var l = 0; l < sizeInputs; l++) {
+        var inputSize = sizeInputs[l];
+        inputSize.addEventListener("change", sizeChanged);
+    }
+
     var addCart = document.getElementsByClassName("product-btn");
     for (var k = 0; k < addCart.length; k++) {
         var buttonAdd = addCart[k];
@@ -169,6 +175,25 @@ function removeCartItem(buttonClicked) {
     updateTotal();
     cartCountItems();
     checkCartItems();
+ }
+
+ function sizeChanged(x) {
+    if (x.value === 0) {
+
+    }
+
+    if (x.classList == "cart-size") {
+        var detailBox = x.parentElement;
+        var cartSerialNo = detailBox.querySelector('.cart-serial-no');
+        var serialNumber = cartSerialNo.textContent;
+    }
+
+    const cartProductIndex = cart.findIndex(product => product.serial_no === serialNumber);
+    if (cartProductIndex !== -1) {
+        cart[cartProductIndex].size = x.value;
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
  }
 
  function quantityChanged(q) {
@@ -257,6 +282,10 @@ function addProductToCart(title, price, productImg, serial_no, quantity) {
     });
     detailBox.appendChild(quantityInput);
     
+    var sizeOptionSelect = document.createElement("option");
+    sizeOptionSelect.value = "0";
+    sizeOptionSelect.innerText = "Select size";
+
     var sizeOptionXS = document.createElement("option");
     sizeOptionXS.value = "XS";
     sizeOptionXS.innerText = "XS";
@@ -279,6 +308,7 @@ function addProductToCart(title, price, productImg, serial_no, quantity) {
     
     var sizeInput = document.createElement("select");
     sizeInput.classList.add("cart-size");
+    sizeInput.appendChild(sizeOptionSelect);
     sizeInput.appendChild(sizeOptionXS);
     sizeInput.appendChild(sizeOptionS);
     sizeInput.appendChild(sizeOptionM);
@@ -309,6 +339,7 @@ function addProductToCart(title, price, productImg, serial_no, quantity) {
         serial_no: serial_no,
         image: productImg,
         quantity: quantity, 
+        size: 0,
     };
     cart.push(product);
 
@@ -440,33 +471,61 @@ function displayCartItems() {
                 });
                 detailBox.appendChild(quantityInput);
     
+                var sizeOptionSelect = document.createElement("option");
+                sizeOptionSelect.value = "0";
+                sizeOptionSelect.innerText = "Select size";
+                if (cartProduct.size === 0) {
+                    sizeOptionSelect.selected = true;
+                }
+
                 var sizeOptionXS = document.createElement("option");
                 sizeOptionXS.value = "XS";
                 sizeOptionXS.innerText = "XS";
+                if (cartProduct.size == "XS") {
+                    sizeOptionXS.selected = true;
+                }
     
                 var sizeOptionS = document.createElement("option");
                 sizeOptionS.value = "S";
                 sizeOptionS.innerText = "S";
+                if (cartProduct.size === "S") {
+                    sizeOptionS.selected = true;
+                }
     
                 var sizeOptionM = document.createElement("option");
                 sizeOptionM.value = "M";
                 sizeOptionM.innerText = "M";
+                if (cartProduct.size === "M") {
+                    sizeOptionM.selected = true;
+                }
     
                 var sizeOptionL = document.createElement("option");
                 sizeOptionL.value = "L";
                 sizeOptionL.innerText = "L";
+                if (cartProduct.size === "L") {
+                    sizeOptionL.selected = true;
+                }
     
                 var sizeOptionXL = document.createElement("option");
                 sizeOptionXL.value = "XL";
                 sizeOptionXL.innerText = "XL";
+                if (cartProduct.size === "XL") {
+                    sizeOptionXL.selected = true;
+                }
     
                 var sizeInput = document.createElement("select");
                 sizeInput.classList.add("cart-size");
+                sizeInput.setAttribute("title", "size");
+                
+                sizeInput.appendChild(sizeOptionSelect);
                 sizeInput.appendChild(sizeOptionXS);
                 sizeInput.appendChild(sizeOptionS);
                 sizeInput.appendChild(sizeOptionM);
                 sizeInput.appendChild(sizeOptionL);
                 sizeInput.appendChild(sizeOptionXL);
+                sizeInput.addEventListener("change", function() {
+                    sizeChanged(this);
+                });
                 detailBox.appendChild(sizeInput);
     
                 cartBox.appendChild(detailBox);

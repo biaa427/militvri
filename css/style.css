@@ -887,6 +887,14 @@ h1, h2, h3, h4, h5, h6 {
     cursor: pointer;
 }
 
+.product-options .product-btn {
+    margin-left: 35%;
+    width: 150px;
+    height: 40px;
+    font-size: 16px;
+    margin-top: 2rem !important;
+}
+
 /* ---------- DARK SIDE ---------- */
 
 .dark-side {
@@ -982,7 +990,7 @@ h1, h2, h3, h4, h5, h6 {
 .cart-size {
     border: 1px solid var(--primary-color-white);
     outline-color: var(--primary-color-grey);
-    width: 3rem;
+    width: 7rem;
     text-align: center;
     font-size: 1rem;
     border-radius: 5px;
