@@ -707,6 +707,8 @@ function displayProducts(productsToDisplay) {
         `;
         productListContainer.appendChild(productItem);
     });
+
+    countProducts();
 }
 
 // Add event listeners for filters
@@ -735,4 +737,12 @@ function filterProducts() {
 function checkPriceRange(price, range) {
     const [min, max] = range.split('-');
     return price >= parseInt(min, 10) && price <= parseInt(max, 10);
+}
+
+function countProducts() {
+    var count = 0;
+    var products = document.querySelectorAll(".product-item");
+    count = products.length;
+    var productsCount = document.querySelector(".productsCount");
+    productsCount.innerText = count + " products";
 }

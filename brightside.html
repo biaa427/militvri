@@ -42,32 +42,84 @@
                 </section>
 
                 <h1>Products</h1>
-                <p>20 products</p>
+                <p class="productsCount"></p>
 
                 <section class="products-list">
                     
 
                     <div class="filters">
-                        <div>
+                        <div id="category-filter">
                             <label for="category-filter">Category:</label>
+                            <div class="allCat-filter">
+                                <input type="checkbox">
+                                <span>All Categories</span>
+                            </div>
+                            <div class="tshirt-filter">
+                                <input type="checkbox">
+                                <span>T-Shirt</span>
+                            </div>
+                            <div class="hoodie-filter">
+                                <input type="checkbox">
+                                <span>Hoodie</span>
+                            </div>
+                            <!--
                             <select id="category-filter">
                                 <option value="all">All Categories</option>
                                 <option value="tshirt">T-Shirt</option>
                                 <option value="hoodie">Hoodie</option>
-                                <!-- Add more categories as needed -->
                             </select>
+                            -->
                         </div>
-                        <div>
+
+                        <div id="price-range-filter">
                             <label for="price-range-filter">Price Range:</label>
+                            <div class="allPrice-filter">
+                                <input type="checkbox">
+                                <span>All Prices</span>
+                            </div>
+                            <div class="0-50">
+                                <input type="checkbox">
+                                <span>0 - 50 RON</span>
+                            </div>
+                            <div class="50-100">
+                                <input type="checkbox">
+                                <span>50 - 100 RON</span>
+                            </div>
+                            <!--
                             <select id="price-range-filter">
                                 <option value="all">All Prices</option>
                                 <option value="0-50">0 - 50 RON</option>
                                 <option value="50-100">50 - 100 RON</option>
-                                <!-- Add more price ranges as needed -->
                             </select>
+                            -->
                         </div>
                         <div>
                             <label for="size-filter">Size:</label>
+                            <div class="allSizes-filter">
+                                <input type="checkbox">
+                                <span>All Sizes</span>
+                            </div>
+                            <div class="XS">
+                                <input type="checkbox">
+                                <span>XS</span>
+                            </div>
+                            <div class="S">
+                                <input type="checkbox">
+                                <span>S</span>
+                            </div>
+                            <div class="M">
+                                <input type="checkbox">
+                                <span>M</span>
+                            </div>
+                            <div class="L">
+                                <input type="checkbox">
+                                <span>L</span>
+                            </div>
+                            <div class="XL">
+                                <input type="checkbox">
+                                <span>XL</span>
+                            </div>
+                            <!--
                             <select id="size-filter">
                                 <option value="all">All Sizes</option>
                                 <option value="XS">XS</option>
@@ -75,8 +127,8 @@
                                 <option value="M">M</option>
                                 <option value="L">L</option>
                                 <option value="XL">XL</option>
-                                <!-- Add more sizes as needed -->
                             </select>
+                            -->
                         </div>
                     </div>
                     <div class="product-list" id="product-list">
