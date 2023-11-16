@@ -1,33 +1,3 @@
-/* cookies */
-
-/*
-const cookieBox = document.querySelector(".wrapper-cookies");
-const buttonsCookies = document.querySelectorAll(".buttonCookie");
-
-const executeCodes = () => {
-    //if cookie contains militvri it will be returned and below of this code will not run
-    //if (document.cookie.includes("militvri")) return;
-    if (!document.cookie.includes("cookieBy=militvri")) {
-        cookieBox.classList.add("show");
-
-        buttonsCookies.forEach((button) => {
-            button.addEventListener("click", () => {
-                cookieBox.classList.remove("show");
-
-                // if button has acceptBtn id
-                if (button.id == "acceptBtn") {
-                    // set cookies for 1 month. 60 = 1 min, 60 = 1 hour, 24 = 1 day, 30 = 30 days
-                    document.cookie = "cookieBy=militvri; max-age=" + 60 * 60 * 24 * 30;
-                }
-            });
-        });
-    }
-};
-
-//executeCodes function will be called on webpage load
-window.addEventListener("load", executeCodes);
-*/
-
 /* hamburger menu */
 
 $(document).ready(function() {
@@ -73,8 +43,152 @@ $(document).ready(function() {
 
 /* shopping cart */
 
-let list = document.querySelector('.all-products');
+let listBrightFeatured = document.querySelector('.all-products-bright');
+
+let listDarkFeatured = document.querySelector(".all-products-dark");
+
+let sizes = [
+    {
+        id: 1,
+        size: "XS",
+    },
+    {
+        id: 2, 
+        size: "S",
+    },
+    {
+        id: 3,
+        size: "M",
+    },
+    {
+        id: 4,
+        size: "L",
+    },
+    {
+        id: 5,
+        size: "XL",
+    },
+]
+
+let featuredProducts_bright = [
+    {
+        id: 1,
+        name: 'PRODUCT NAME 1',
+        image: 'product-1.jpeg',
+        price: 29,
+        serial_no: "135",
+        category: "tshirt",
+        size: "L",
+    },
+    {
+        id: 2,
+        name: 'PRODUCT NAME 2',
+        image: 'product-2.jpeg',
+        price: 29,
+        serial_no: "222",
+        category: "hoodie",
+        size: "L",
+    },
+    {
+        id: 4,
+        name: 'PRODUCT NAME 4',
+        image: 'product-4.jpeg',
+        price: 29,
+        serial_no: "658",
+        category: "tshirt",
+        size: "M",
+    },
+];
+
+let featuredProducts_dark = [
+    {
+        id: 1,
+        name: 'PRODUCT NAME 1',
+        image: 'product-1.jpeg',
+        price: 29,
+        serial_no: "135",
+        category: "tshirt",
+        size: "L",
+    },
+    {
+        id: 3,
+        name: 'PRODUCT NAME 3',
+        image: 'product-3.jpeg',
+        price: 29,
+        serial_no: "210",
+        category: "tshirt",
+        size: "XS",
+    },
+    {
+        id: 4,
+        name: 'PRODUCT NAME 4',
+        image: 'product-4.jpeg',
+        price: 29,
+        serial_no: "658",
+        category: "tshirt",
+        size: "M",
+    },
+];
+
 let products = [
+    {
+        id: 1,
+        name: 'PRODUCT NAME 1',
+        image: 'product-1.jpeg',
+        price: 29,
+        serial_no: "135",
+        category: "tshirt",
+    },
+    {
+        id: 2,
+        name: 'PRODUCT NAME 2',
+        image: 'product-2.jpeg',
+        price: 29,
+        serial_no: "222",
+        category: "hoodie",
+    },
+    {
+        id: 3,
+        name: 'PRODUCT NAME 3',
+        image: 'product-3.jpeg',
+        price: 29,
+        serial_no: "210",
+        category: "tshirt",
+    },
+    {
+        id: 4,
+        name: 'PRODUCT NAME 4',
+        image: 'product-4.jpeg',
+        price: 29,
+        serial_no: "658",
+        category: "tshirt",
+    },
+];
+
+let products_sizes = [
+    { id: 1, productid: 1, sizeid: 1},
+    { id: 2, productid: 1, sizeid: 2},
+    { id: 3, productid: 1, sizeid: 3},
+    { id: 4, productid: 1, sizeid: 4},
+    { id: 5, productid: 1, sizeid: 5},
+    { id: 6, productid: 2, sizeid: 1},
+    { id: 7, productid: 2, sizeid: 2},
+    { id: 8, productid: 2, sizeid: 3},
+    { id: 9, productid: 2, sizeid: 4},
+    { id: 10, productid: 2, sizeid: 5},
+    { id: 11, productid: 3, sizeid: 1},
+    { id: 12, productid: 3, sizeid: 2},
+    { id: 13, productid: 3, sizeid: 3},
+    { id: 14, productid: 3, sizeid: 4},
+    { id: 15, productid: 3, sizeid: 5},
+    { id: 16, productid: 4, sizeid: 1},
+    { id: 17, productid: 4, sizeid: 2},
+    { id: 18, productid: 4, sizeid: 3},
+    { id: 19, productid: 4, sizeid: 4},
+    { id: 20, productid: 4, sizeid: 5},
+];
+
+let productsDark = [
     {
         id: 1,
         name: 'PRODUCT NAME 1',
@@ -115,27 +229,86 @@ let products = [
 
 let cart = [];
 
-function loadProducts() {
-    products.forEach((value, key) => {
-        let newDiv = document.createElement('div');
-        newDiv.classList.add('product');
-        newDiv.innerHTML = `
+function loadProductsDark() {
+    featuredProducts_dark.forEach((value, key) => {
+        let newDivDark = document.createElement('div');
+        newDivDark.classList.add('product');
+        newDivDark.innerHTML = `
         <div class="product-box" id="${value.serial_no}">
         <img src="images//${value.image}" alt="" class="product-image" style="cursor: pointer" onclick="openProduct(this)">
             <div class="product-info">
                 <h4 class="product-title">${value.name}</h4>
                 <p class="product-price">${value.price} RON</p>
                 <p class="product-serial-no" style="display: none">${value.serial_no}</p>
-                <button type="button" class="product-btn" onclick="addCartClicked(this)">Add To Cart</button>
+                <button type="button" class="product-btn" onclick="buyItem(this)">Buy Now</button>
                 
             </div>
         </div>
         `;
 
-        list.appendChild(newDiv);
+        listDarkFeatured.appendChild(newDivDark);
     })
-    
+
+    displayProductsDark(productsDark);
+}
+
+function loadProducts() {
+    // Function to get the available sizes for a given product
+    function getAvailableSizes(productId) {
+        const productSizes = products_sizes.filter(ps => ps.productid === productId);
+        const availableSizes = productSizes.map(ps => sizes.find(size => size.id === ps.sizeid)?.size);
+        return availableSizes.filter(Boolean).join(', '); // Filter out undefined sizes and join them
+    }
+
+    // Function to generate product HTML
+    function generateProductHTML(product, sizes) {
+        return `
+        <div class="product-box" id="${product.serial_no}">
+            <img src="images//${product.image}" alt="" class="product-image" style="cursor: pointer" onclick="openProduct(this)">
+            <div class="product-info">
+                <h4 class="product-title">${product.name}</h4>
+                <p class="product-price">${product.price} RON</p>
+                <p class="product-serial-no" style="display: none">${product.serial_no}</p>
+                <p class="product-size">Available sizes: ${sizes}</p>
+                <button type="button" class="product-btn" onclick="buyItem(this)">Buy Now</button>
+            </div>
+        </div>`;
+    }
+
+    // Display bright products
+    featuredProducts_bright.forEach(product => {
+        const availableSizes = getAvailableSizes(product.id);
+        if (availableSizes) {
+            let newDivBright = document.createElement('div');
+            newDivBright.classList.add('product');
+            newDivBright.innerHTML = generateProductHTML(product, availableSizes);
+
+            listBrightFeatured.appendChild(newDivBright);
+        }
+    });
+
+    /*
+    featuredProducts_bright.forEach((value, key) => {
+        let newDivBright = document.createElement('div');
+        newDivBright.classList.add('product');
+        newDivBright.innerHTML = `
+        <div class="product-box" id="${value.serial_no}">
+        <img src="images//${value.image}" alt="" class="product-image" style="cursor: pointer" onclick="openProduct(this)">
+            <div class="product-info">
+                <h4 class="product-title">${value.name}</h4>
+                <p class="product-price">${value.price} RON</p>
+                <p class="product-serial-no" style="display: none">${value.serial_no}</p>
+                <button type="button" class="product-btn" onclick="buyItem(this)">Buy Now</button>
+                
+            </div>
+        </div>
+        `;
+
+        listBrightFeatured.appendChild(newDivBright);
+    })
+*/
     displayProducts(products);
+    
 }
 
 
@@ -412,6 +585,18 @@ function updateTotal() {
 function buynow() {
     // window.location.href = "cart.html" -on the same page
     window.open('cart.html', '_blank'); // new page
+}
+
+function buyItem(e) {
+    var productBox = e.parentNode; // Get the immediate parent container
+
+    while (productBox && !productBox.classList.contains('product-box')) {
+        productBox = productBox.parentNode; // Traverse up until product-info class is found
+    }
+
+    var id = productBox.id;
+
+    window.open('product.html?sn=' + id, '_blank');
 }
 
 function openProduct(img) {
@@ -695,15 +880,23 @@ function displayProducts(productsToDisplay) {
     const productListContainer = document.getElementById('product-list');
     productListContainer.innerHTML = ''; // Clear existing content
 
+    // Function to get the available sizes for a given product
+    function getAvailableSizes(productId) {
+        const productSizes = products_sizes.filter(ps => ps.productid === productId);
+        const availableSizes = productSizes.map(ps => sizes.find(size => size.id === ps.sizeid)?.size);
+        return availableSizes.filter(Boolean).join(', '); // Filter out undefined sizes and join them
+    }
+
     productsToDisplay.forEach(product => {
+        const availableSizes = getAvailableSizes(product.id);
+
         const productItem = document.createElement('div');
         productItem.classList.add('product-item');
         productItem.innerHTML = `
-        <img src="images//${product.image}" alt="" class="product-image" style="cursor: pointer">
+            <img src="images//${product.image}" alt="" class="product-image" style="cursor: pointer">
             <h3>${product.name}</h3>
-            <p>Category: ${product.category}</p>
             <p>Price: ${product.price} RON</p>
-            <p>Size: ${product.size}</p>
+            <p>Available sizes: ${availableSizes}</p>
         `;
         productListContainer.appendChild(productItem);
     });
@@ -711,27 +904,107 @@ function displayProducts(productsToDisplay) {
     countProducts();
 }
 
-// Add event listeners for filters
-document.getElementById('category-filter').addEventListener('change', filterProducts);
-document.getElementById('price-range-filter').addEventListener('change', filterProducts);
-document.getElementById('size-filter').addEventListener('change', filterProducts);
+function displayProductsDark(productsToDisplay) {
+    const productListContainer = document.getElementById('product-list-dark');
+    productListContainer.innerHTML = ''; // Clear existing content
 
-function filterProducts() {
-    const categoryFilter = document.getElementById('category-filter').value;
-    const priceRangeFilter = document.getElementById('price-range-filter').value;
-    const sizeFilter = document.getElementById('size-filter').value;
+    productsToDisplay.forEach(product => {
+        const productItem = document.createElement('div');
+        productItem.classList.add('product-item-dark');
+        productItem.innerHTML = `
+        <img src="images//${product.image}" alt="" class="product-image" style="cursor: pointer">
+            <h3>${product.name}</h3>
+            
+            <p>Price: ${product.price} RON</p>
+            <p>Size: ${product.size}</p>
+        `;
+        productListContainer.appendChild(productItem);
+    });
+
+    countProductsDark();
+}
+
+// Check if the page is brightside.html
+const isBrightside = window.location.pathname.includes('brightside.html');
+const isDarkside = window.location.pathname.includes('darkside.html');
+
+if (isBrightside) {
+    // Attach event listeners for brightside.html
+    document.getElementById('category-filter').addEventListener('change', () => {
+        try {
+            filterProducts(products, 'category-filter', 'price-range-filter', 'size-filter', displayProducts);
+        } catch (error) {
+            console.error('Error filtering products:', error);
+        }
+    });
+
+    document.getElementById('price-range-filter').addEventListener('change', () => {
+        try {
+            filterProducts(products, 'category-filter', 'price-range-filter', 'size-filter', displayProducts);
+        } catch (error) {
+            console.error('Error filtering products:', error);
+        }
+    });
+
+    document.getElementById('size-filter').addEventListener('change', () => {
+        try {
+            filterProducts(products, 'category-filter', 'price-range-filter', 'size-filter', displayProducts);
+        } catch (error) {
+            console.error('Error filtering products:', error);
+        }
+    });
+} else if (isDarkside) {
+    // Attach event listeners for darkside.html
+    document.getElementById('category-filter-dark').addEventListener('change', () => {
+        try {
+            filterProducts(productsDark, 'category-filter-dark', 'price-range-filter-dark', 'size-filter-dark', displayProductsDark);
+        } catch (error) {
+            console.error('Error filtering products:', error);
+        }
+    });
+
+    document.getElementById('price-range-filter-dark').addEventListener('change', () => {
+        try {
+            filterProducts(productsDark, 'category-filter-dark', 'price-range-filter-dark', 'size-filter-dark', displayProductsDark);
+        } catch (error) {
+            console.error('Error filtering products:', error);
+        }
+    });
+
+    document.getElementById('size-filter-dark').addEventListener('change', () => {
+        try {
+            filterProducts(productsDark, 'category-filter-dark', 'price-range-filter-dark', 'size-filter-dark', displayProductsDark);
+        } catch (error) {
+            console.error('Error filtering products:', error);
+        }
+    });
+}
+else {
+
+}
+
+
+function filterProducts(productsArray, categoryFilterId, priceRangeFilterId, sizeFilterId, displayFunction) {
+    const categoryCheckboxes = document.querySelectorAll(`#${categoryFilterId} input:checked`);
+    const priceRangeCheckboxes = document.querySelectorAll(`#${priceRangeFilterId} input:checked`);
+    const sizeCheckboxes = document.querySelectorAll(`#${sizeFilterId} input:checked`);
+
+    // Extract values from checked checkboxes
+    const selectedCategories = Array.from(categoryCheckboxes).map(checkbox => checkbox.title);
+    const selectedPriceRanges = Array.from(priceRangeCheckboxes).map(checkbox => checkbox.title);
+    const selectedSizes = Array.from(sizeCheckboxes).map(checkbox => checkbox.title);
 
     // Apply filters to the products
-    const filteredProducts = products.filter(product => {
+    const filteredProducts = productsArray.filter(product => {
         return (
-            (categoryFilter === 'all' || product.category === categoryFilter) &&
-            (priceRangeFilter === 'all' || checkPriceRange(product.price, priceRangeFilter)) &&
-            (sizeFilter === 'all' || product.size === sizeFilter)
+            (selectedCategories.length === 0 || selectedCategories.includes(product.category)) &&
+            (selectedPriceRanges.length === 0 || selectedPriceRanges.some(range => checkPriceRange(product.price, range))) &&
+            (selectedSizes.length === 0 || selectedSizes.includes(product.size))
         );
     });
 
-    // Update the displayed product list
-    displayProducts(filteredProducts);
+    // Update the displayed product list using the provided display function
+    displayFunction(filteredProducts);
 }
 
 function checkPriceRange(price, range) {
@@ -744,5 +1017,13 @@ function countProducts() {
     var products = document.querySelectorAll(".product-item");
     count = products.length;
     var productsCount = document.querySelector(".productsCount");
+    productsCount.innerText = count + " products";
+}
+
+function countProductsDark() {
+    var count = 0;
+    var products = document.querySelectorAll(".product-item-dark");
+    count = products.length;
+    var productsCount = document.querySelector(".productsCount-dark");
     productsCount.innerText = count + " products";
 }

@@ -36,7 +36,7 @@
 
                 <section class="featured-products">
                         <h1>Featured Products</h1>
-                        <div class="all-products">
+                        <div class="all-products-bright">
                             
                         </div>
                 </section>
@@ -49,74 +49,95 @@
 
                     <div class="filters">
                         <div id="category-filter">
-                            <label for="category-filter">Category:</label>
-                            <div>
-                                <input type="checkbox" title="tshirt" id="tshirt-filter">
+                            <label for="category-filter" class="label-filter">Category:</label>
+                            <div class="filter-container">
+                                <input type="checkbox" title="tshirt" id="tshirt-filter" class="check-input">
+                                <label for="tshirt-filter" class="checkbox">
+                                    <svg viewBox="0 0 22 16" fill="none">
+                                        <path d="M1 6.85L8.09677 14L21 1" />
+                                    </svg>
+                                </label>
                                 <span>T-Shirt</span>
                             </div>
-                            <div>
-                                <input type="checkbox" title="hoodie" id="hoodie-filter">
+                            <div class="filter-container">
+                                <input type="checkbox" title="hoodie" id="hoodie-filter" class="check-input">
+                                <label for="hoodie-filter" class="checkbox">
+                                    <svg viewBox="0 0 22 16" fill="none">
+                                        <path d="M1 6.85L8.09677 14L21 1" />
+                                    </svg>
+                                </label>
                                 <span>Hoodie</span>
                             </div>
-                            <!--
-                            <select id="category-filter">
-                                <option value="all">All Categories</option>
-                                <option value="tshirt">T-Shirt</option>
-                                <option value="hoodie">Hoodie</option>
-                            </select>
-                            -->
                         </div>
 
                         <div id="price-range-filter">
-                            <label for="price-range-filter">Price Range:</label>
-                            <div>
-                                <input type="checkbox" id="0-50-filter" title="0-50">
+                            <label for="price-range-filter" class="label-filter">Price Range:</label>
+                            <div class="filter-container">
+                                <input type="checkbox" id="0-50-filter" title="0-50" class="check-input">
+                                <label for="0-50-filter" class="checkbox">
+                                    <svg viewBox="0 0 22 16" fill="none">
+                                        <path d="M1 6.85L8.09677 14L21 1" />
+                                    </svg>
+                                </label>
                                 <span>0 - 50 RON</span>
                             </div>
-                            <div>
-                                <input type="checkbox" id="50-100-filter" title="50-100">
+                            <div class="filter-container">
+                                <input type="checkbox" id="50-100-filter" title="50-100" class="check-input">
+                                <label for="50-100-filter" class="checkbox">
+                                    <svg viewBox="0 0 22 16" fill="none">
+                                        <path d="M1 6.85L8.09677 14L21 1" />
+                                    </svg>
+                                </label>
                                 <span>50 - 100 RON</span>
                             </div>
-                            <!--
-                            <select id="price-range-filter">
-                                <option value="all">All Prices</option>
-                                <option value="0-50">0 - 50 RON</option>
-                                <option value="50-100">50 - 100 RON</option>
-                            </select>
-                            -->
                         </div>
                         <div id="size-filter">
-                            <label for="size-filter">Size:</label>
-                            <div>
-                                <input type="checkbox" title="xs" id="xs-filter">
+                            <label for="size-filter" class="label-filter">Size:</label>
+                            <div class="filter-container">
+                                <input type="checkbox" title="XS" id="xs-filter" class="check-input">
+                                <label for="xs-filter" class="checkbox">
+                                    <svg viewBox="0 0 22 16" fill="none">
+                                        <path d="M1 6.85L8.09677 14L21 1" />
+                                    </svg>
+                                </label>
                                 <span>XS</span>
                             </div>
-                            <div>
-                                <input type="checkbox" title="s" id="s-filter">
+                            <div class="filter-container">
+                                <input type="checkbox" title="S" id="s-filter" class="check-input">
+                                <label for="s-filter" class="checkbox">
+                                    <svg viewBox="0 0 22 16" fill="none">
+                                        <path d="M1 6.85L8.09677 14L21 1" />
+                                    </svg>
+                                </label>
                                 <span>S</span>
                             </div>
-                            <div>
-                                <input type="checkbox" title="m" id="m-filter">
+                            <div class="filter-container">
+                                <input type="checkbox" title="M" id="m-filter" class="check-input">
+                                <label for="m-filter" class="checkbox">
+                                    <svg viewBox="0 0 22 16" fill="none">
+                                        <path d="M1 6.85L8.09677 14L21 1" />
+                                    </svg>
+                                </label>
                                 <span>M</span>
                             </div>
-                            <div>
-                                <input type="checkbox" title="l" id="l-filter">
+                            <div class="filter-container">
+                                <input type="checkbox" title="L" id="l-filter" class="check-input">
+                                <label for="l-filter" class="checkbox">
+                                    <svg viewBox="0 0 22 16" fill="none">
+                                        <path d="M1 6.85L8.09677 14L21 1" />
+                                    </svg>
+                                </label>
                                 <span>L</span>
                             </div>
-                            <div>
-                                <input type="checkbox" title="xl" id="xl-filter">
+                            <div class="filter-container">
+                                <input type="checkbox" title="XL" id="xl-filter" class="check-input">
+                                <label for="xl-filter" class="checkbox">
+                                    <svg viewBox="0 0 22 16" fill="none">
+                                        <path d="M1 6.85L8.09677 14L21 1" />
+                                    </svg>
+                                </label>
                                 <span>XL</span>
                             </div>
-                            <!--
-                            <select id="size-filter">
-                                <option value="all">All Sizes</option>
-                                <option value="XS">XS</option>
-                                <option value="S">S</option>
-                                <option value="M">M</option>
-                                <option value="L">L</option>
-                                <option value="XL">XL</option>
-                            </select>
-                            -->
                         </div>
                     </div>
                     <div class="product-list" id="product-list">
