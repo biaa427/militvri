@@ -48,183 +48,54 @@ let listBrightFeatured = document.querySelector('.all-products-bright');
 let listDarkFeatured = document.querySelector(".all-products-dark");
 
 let sizes = [
-    {
-        id: 1,
-        size: "XS",
-    },
-    {
-        id: 2, 
-        size: "S",
-    },
-    {
-        id: 3,
-        size: "M",
-    },
-    {
-        id: 4,
-        size: "L",
-    },
-    {
-        id: 5,
-        size: "XL",
-    },
+    { id: 1, size: "XS"},
+    { id: 2, size: "S"},
+    { id: 3, size: "M"},
+    { id: 4, size: "L"},
+    { id: 5, size: "XL"}
 ]
 
 let featuredProducts_bright = [
-    {
-        id: 1,
-        name: 'PRODUCT NAME 1',
-        image: 'product-1.jpeg',
-        price: 29,
-        serial_no: "135",
-        category: "tshirt",
-        size: "L",
-    },
-    {
-        id: 2,
-        name: 'PRODUCT NAME 2',
-        image: 'product-2.jpeg',
-        price: 29,
-        serial_no: "222",
-        category: "hoodie",
-        size: "L",
-    },
-    {
-        id: 4,
-        name: 'PRODUCT NAME 4',
-        image: 'product-4.jpeg',
-        price: 29,
-        serial_no: "658",
-        category: "tshirt",
-        size: "M",
-    },
+    { id: 1, name: 'PRODUCT NAME 1', image: 'product-1.jpeg', price: 29, serial_no: "135", category: "tshirt"},
+    { id: 2, name: 'PRODUCT NAME 2', image: 'product-2.jpeg', price: 29, serial_no: "222", category: "hoodie"},
+    { id: 4, name: 'PRODUCT NAME 4', image: 'product-4.jpeg', price: 29, serial_no: "658", category: "tshirt"}
 ];
 
 let featuredProducts_dark = [
-    {
-        id: 1,
-        name: 'PRODUCT NAME 1',
-        image: 'product-1.jpeg',
-        price: 29,
-        serial_no: "135",
-        category: "tshirt",
-        size: "L",
-    },
-    {
-        id: 3,
-        name: 'PRODUCT NAME 3',
-        image: 'product-3.jpeg',
-        price: 29,
-        serial_no: "210",
-        category: "tshirt",
-        size: "XS",
-    },
-    {
-        id: 4,
-        name: 'PRODUCT NAME 4',
-        image: 'product-4.jpeg',
-        price: 29,
-        serial_no: "658",
-        category: "tshirt",
-        size: "M",
-    },
+    { id: 1, name: 'PRODUCT NAME 1', image: 'product-1.jpeg', price: 29, serial_no: "135", category: "tshirt"},
+    { id: 3, name: 'PRODUCT NAME 3', image: 'product-3.jpeg', price: 29, serial_no: "210", category: "tshirt"},
+    { id: 4, name: 'PRODUCT NAME 4', image: 'product-4.jpeg', price: 29, serial_no: "658", category: "tshirt"}
 ];
 
 let products = [
-    {
-        id: 1,
-        name: 'PRODUCT NAME 1',
-        image: 'product-1.jpeg',
-        price: 29,
-        serial_no: "135",
-        category: "tshirt",
-    },
-    {
-        id: 2,
-        name: 'PRODUCT NAME 2',
-        image: 'product-2.jpeg',
-        price: 29,
-        serial_no: "222",
-        category: "hoodie",
-    },
-    {
-        id: 3,
-        name: 'PRODUCT NAME 3',
-        image: 'product-3.jpeg',
-        price: 29,
-        serial_no: "210",
-        category: "tshirt",
-    },
-    {
-        id: 4,
-        name: 'PRODUCT NAME 4',
-        image: 'product-4.jpeg',
-        price: 29,
-        serial_no: "658",
-        category: "tshirt",
-    },
+    { id: 1, name: 'PRODUCT NAME 1', image: 'product-1.jpeg', price: 29, serial_no: "135", category: "tshirt"},
+    { id: 2, name: 'PRODUCT NAME 2', image: 'product-2.jpeg', price: 29, serial_no: "222", category: "hoodie"},
+    { id: 3, name: 'PRODUCT NAME 3', image: 'product-3.jpeg', price: 29, serial_no: "210", category: "tshirt"},
+    { id: 4, name: 'PRODUCT NAME 4', image: 'product-4.jpeg', price: 29, serial_no: "658", category: "tshirt"}
 ];
 
 let products_sizes = [
-    { id: 1, productid: 1, sizeid: 1},
     { id: 2, productid: 1, sizeid: 2},
     { id: 3, productid: 1, sizeid: 3},
     { id: 4, productid: 1, sizeid: 4},
     { id: 5, productid: 1, sizeid: 5},
     { id: 6, productid: 2, sizeid: 1},
-    { id: 7, productid: 2, sizeid: 2},
     { id: 8, productid: 2, sizeid: 3},
     { id: 9, productid: 2, sizeid: 4},
     { id: 10, productid: 2, sizeid: 5},
-    { id: 11, productid: 3, sizeid: 1},
-    { id: 12, productid: 3, sizeid: 2},
     { id: 13, productid: 3, sizeid: 3},
-    { id: 14, productid: 3, sizeid: 4},
     { id: 15, productid: 3, sizeid: 5},
     { id: 16, productid: 4, sizeid: 1},
-    { id: 17, productid: 4, sizeid: 2},
     { id: 18, productid: 4, sizeid: 3},
     { id: 19, productid: 4, sizeid: 4},
-    { id: 20, productid: 4, sizeid: 5},
+    { id: 20, productid: 4, sizeid: 5}
 ];
 
 let productsDark = [
-    {
-        id: 1,
-        name: 'PRODUCT NAME 1',
-        image: 'product-1.jpeg',
-        price: 29,
-        serial_no: "135",
-        category: "tshirt",
-        size: "L",
-    },
-    {
-        id: 2,
-        name: 'PRODUCT NAME 2',
-        image: 'product-2.jpeg',
-        price: 29,
-        serial_no: "222",
-        category: "hoodie",
-        size: "L",
-    },
-    {
-        id: 3,
-        name: 'PRODUCT NAME 3',
-        image: 'product-3.jpeg',
-        price: 29,
-        serial_no: "210",
-        category: "tshirt",
-        size: "XS",
-    },
-    {
-        id: 4,
-        name: 'PRODUCT NAME 4',
-        image: 'product-4.jpeg',
-        price: 29,
-        serial_no: "658",
-        category: "tshirt",
-        size: "M",
-    },
+    { id: 1, name: 'PRODUCT NAME 1', image: 'product-1.jpeg', price: 29, serial_no: "135", category: "tshirt"},
+    { id: 2, name: 'PRODUCT NAME 2', image: 'product-2.jpeg', price: 29, serial_no: "222", category: "hoodie"},
+    { id: 3, name: 'PRODUCT NAME 3', image: 'product-3.jpeg', price: 29, serial_no: "210", category: "tshirt"},
+    { id: 4, name: 'PRODUCT NAME 4', image: 'product-4.jpeg', price: 29, serial_no: "658", category: "tshirt"}
 ];
 
 let cart = [];
@@ -932,7 +803,7 @@ if (isBrightside) {
     // Attach event listeners for brightside.html
     document.getElementById('category-filter').addEventListener('change', () => {
         try {
-            filterProducts(products, 'category-filter', 'price-range-filter', 'size-filter', displayProducts);
+            filterProducts(products, products_sizes, 'category-filter', 'price-range-filter', 'size-filter', displayProducts);
         } catch (error) {
             console.error('Error filtering products:', error);
         }
@@ -940,7 +811,7 @@ if (isBrightside) {
 
     document.getElementById('price-range-filter').addEventListener('change', () => {
         try {
-            filterProducts(products, 'category-filter', 'price-range-filter', 'size-filter', displayProducts);
+            filterProducts(products, products_sizes, 'category-filter', 'price-range-filter', 'size-filter', displayProducts);
         } catch (error) {
             console.error('Error filtering products:', error);
         }
@@ -948,7 +819,7 @@ if (isBrightside) {
 
     document.getElementById('size-filter').addEventListener('change', () => {
         try {
-            filterProducts(products, 'category-filter', 'price-range-filter', 'size-filter', displayProducts);
+            filterProducts(products, products_sizes, 'category-filter', 'price-range-filter', 'size-filter', displayProducts);
         } catch (error) {
             console.error('Error filtering products:', error);
         }
@@ -957,7 +828,7 @@ if (isBrightside) {
     // Attach event listeners for darkside.html
     document.getElementById('category-filter-dark').addEventListener('change', () => {
         try {
-            filterProducts(productsDark, 'category-filter-dark', 'price-range-filter-dark', 'size-filter-dark', displayProductsDark);
+            filterProducts(productsDark, products_sizes, 'category-filter-dark', 'price-range-filter-dark', 'size-filter-dark', displayProductsDark);
         } catch (error) {
             console.error('Error filtering products:', error);
         }
@@ -965,7 +836,7 @@ if (isBrightside) {
 
     document.getElementById('price-range-filter-dark').addEventListener('change', () => {
         try {
-            filterProducts(productsDark, 'category-filter-dark', 'price-range-filter-dark', 'size-filter-dark', displayProductsDark);
+            filterProducts(productsDark, products_sizes, 'category-filter-dark', 'price-range-filter-dark', 'size-filter-dark', displayProductsDark);
         } catch (error) {
             console.error('Error filtering products:', error);
         }
@@ -973,7 +844,7 @@ if (isBrightside) {
 
     document.getElementById('size-filter-dark').addEventListener('change', () => {
         try {
-            filterProducts(productsDark, 'category-filter-dark', 'price-range-filter-dark', 'size-filter-dark', displayProductsDark);
+            filterProducts(productsDark, products_sizes, 'category-filter-dark', 'price-range-filter-dark', 'size-filter-dark', displayProductsDark);
         } catch (error) {
             console.error('Error filtering products:', error);
         }
@@ -984,7 +855,7 @@ else {
 }
 
 
-function filterProducts(productsArray, categoryFilterId, priceRangeFilterId, sizeFilterId, displayFunction) {
+function filterProducts(productsArray, sizesArray, categoryFilterId, priceRangeFilterId, sizeFilterId, displayFunction) {
     const categoryCheckboxes = document.querySelectorAll(`#${categoryFilterId} input:checked`);
     const priceRangeCheckboxes = document.querySelectorAll(`#${priceRangeFilterId} input:checked`);
     const sizeCheckboxes = document.querySelectorAll(`#${sizeFilterId} input:checked`);
@@ -996,10 +867,12 @@ function filterProducts(productsArray, categoryFilterId, priceRangeFilterId, siz
 
     // Apply filters to the products
     const filteredProducts = productsArray.filter(product => {
+        const productSizes = sizesArray.filter(ps => ps.productid === product.id);
+
         return (
             (selectedCategories.length === 0 || selectedCategories.includes(product.category)) &&
             (selectedPriceRanges.length === 0 || selectedPriceRanges.some(range => checkPriceRange(product.price, range))) &&
-            (selectedSizes.length === 0 || selectedSizes.includes(product.size))
+            (selectedSizes.length === 0 || selectedSizes.some(size => productSizes.some(ps => ps.sizeid === sizes.find(s => s.size === size).id)))
         );
     });
 
