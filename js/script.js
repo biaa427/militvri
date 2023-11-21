@@ -91,6 +91,8 @@ let products_sizes = [
     { id: 20, productid: 4, sizeid: 5}
 ];
 
+
+
 let productsDark = [
     { id: 1, name: 'PRODUCT NAME 1', image: 'product-1.jpeg', price: 29, serial_no: "135", category: "tshirt"},
     { id: 2, name: 'PRODUCT NAME 2', image: 'product-2.jpeg', price: 29, serial_no: "222", category: "hoodie"},
