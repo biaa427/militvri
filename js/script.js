@@ -15,6 +15,49 @@ $(document).ready(function() {
 
 });
 
+/* send mail */
+
+function sendemail() {
+    // Gather form data
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+    const email = document.getElementById('email').value;
+    const phoneNumber = document.getElementById('phoneNumber').value;
+    const message = document.getElementById('msg').value;
+
+    // Simple client-side validation
+    if (!firstName || !lastName || !email || !phoneNumber || !message) {
+        alert('Please fill in all fields');
+        return;
+    }
+
+    // Prepare data to send to the server
+    const data = {
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        phoneNumber: phoneNumber,
+        message: message
+    };
+
+    // Send data to the server using XMLHttpRequest or fetch API
+    // Here, I'm assuming you have a server-side script named 'sendEmail.php'
+    fetch('sendEmail.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(data.message);
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+}
+
 /* photo slider buttons */
 
 var imgList = document.getElementById("img-list");

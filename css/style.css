@@ -1373,17 +1373,23 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: 10px;
 }
 
+.filters-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Optional: Set the height of the container if needed */
+}
+
 .filters {
-    width: 320px;
-    box-sizing: border-box;
+    text-align: center;
     padding: 20px; /* Add padding as needed */
-    margin-left: 10px;
 }
 
 .filter-container {
     margin: 1rem 0;
-    display: flex;
     align-items: center;
+    display: flex;
+    text-align: center;
 }
 
 .filter-container span {
