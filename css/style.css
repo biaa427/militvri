@@ -825,6 +825,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-color-black);
     text-align: center;
     width: fit-content;
+    width: -moz-fit-content;
     height: fit-content;
     padding: 2rem;
     display: flex;
@@ -853,7 +854,7 @@ h1, h2, h3, h4, h5, h6 {
     transition: all 0.3s;
     justify-content: center;
     align-items: center;
-    width: 195px;
+    width: 225px;
 }
 
 .product-options .product-btn:link,
@@ -1439,7 +1440,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .product-image {
     display: block;
-    width: 195px;
+    width: 225px;
     height: 225px;
     margin: 1rem;
 }
