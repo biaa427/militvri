@@ -99,22 +99,27 @@ let sizes = [
 ]
 
 let featuredProducts_bright = [
-    { id: 1, name: 'PRODUCT NAME 1', image: 'product-test.jpg', price: 29, serial_no: "135", category: "tshirt"},
-    { id: 2, name: 'PRODUCT NAME 2', image: 'product-2.jpeg', price: 29, serial_no: "222", category: "hoodie"},
-    { id: 4, name: 'PRODUCT NAME 4', image: 'product-4.jpeg', price: 29, serial_no: "658", category: "tshirt"}
+    { id: 1, name: 'ADDICTION', image: 'addiction f.jpg', price: 29, serial_no: "135", category: "tshirt"},
+    { id: 2, name: 'BALAKLAVA', image: 'balaklavaalb f.jpg', price: 29, serial_no: "222", category: "hoodie"},
+    { id: 3, name: 'BANKNOTE', image: 'banknotealb f.jpg', price: 29, serial_no: "658", category: "tshirt"}
 ];
 
 let featuredProducts_dark = [
-    { id: 1, name: 'PRODUCT NAME 1', image: 'product-1.jpeg', price: 29, serial_no: "135", category: "tshirt"},
-    { id: 3, name: 'PRODUCT NAME 3', image: 'product-3.jpeg', price: 29, serial_no: "210", category: "tshirt"},
-    { id: 4, name: 'PRODUCT NAME 4', image: 'product-4.jpeg', price: 29, serial_no: "658", category: "tshirt"}
+    { id: 1, name: 'BALAKLAVA', image: 'balaklavablk f.jpg', price: 29, serial_no: "135", category: "hoodie"},
+    { id: 2, name: 'BANKNOTE', image: 'banknoteblk f.jpg', price: 29, serial_no: "210", category: "tshirt"},
+    { id: 3, name: 'BLOW', image: 'blow f.jpg', price: 29, serial_no: "658", category: "hoodie"}
 ];
 
 let products = [
-    { id: 1, name: 'PRODUCT NAME 1', image: 'product-test.jpg', price: 29, serial_no: "135", category: "tshirt"},
-    { id: 2, name: 'PRODUCT NAME 2', image: 'product-2.jpeg', price: 29, serial_no: "222", category: "hoodie"},
-    { id: 3, name: 'PRODUCT NAME 3', image: 'product-3.jpeg', price: 29, serial_no: "210", category: "tshirt"},
-    { id: 4, name: 'PRODUCT NAME 4', image: 'product-4.jpeg', price: 29, serial_no: "658", category: "tshirt"}
+    { id: 1, name: 'ADDICTION', image: 'addiction f.jpg', price: 29, serial_no: "135", category: "tshirt"},
+    { id: 2, name: 'BALAKLAVA', image: 'balaklavaalb f.jpg', price: 29, serial_no: "222", category: "hoodie"},
+    { id: 3, name: 'BANKNOTE', image: 'banknotealb f.jpg', price: 29, serial_no: "658", category: "tshirt"},
+    { id: 4, name: 'CRIMINALREC', image: 'criminalrecalb f.jpg', price: 29, serial_no: "658", category: "hoodie"},
+    { id: 5, name: 'EYE', image: 'eye f.jpg', price: 29, serial_no: "658", category: "hoodie"},
+    { id: 6, name: 'GETEM', image: 'getemalb f.jpg', price: 29, serial_no: "658", category: "tshirt"},
+    { id: 7, name: 'SELL', image: 'sellalb f.jpg', price: 29, serial_no: "658", category: "tshirt"},
+    { id: 8, name: 'SNAKEROSE', image: 'snakerose f.jpg', price: 29, serial_no: "658", category: "hoodie"},
+    { id: 9, name: 'UZZI', image: 'uzzialb f.jpg', price: 29, serial_no: "658", category: "tshirt"}
 ];
 
 let products_sizes = [
@@ -137,10 +142,17 @@ let products_sizes = [
 
 
 let productsDark = [
-    { id: 1, name: 'PRODUCT NAME 1', image: 'product-test.jpg', price: 29, serial_no: "135", category: "tshirt"},
-    { id: 2, name: 'PRODUCT NAME 2', image: 'product-2.jpeg', price: 29, serial_no: "222", category: "hoodie"},
-    { id: 3, name: 'PRODUCT NAME 3', image: 'product-3.jpeg', price: 29, serial_no: "210", category: "tshirt"},
-    { id: 4, name: 'PRODUCT NAME 4', image: 'product-4.jpeg', price: 29, serial_no: "658", category: "tshirt"}
+    { id: 1, name: 'BALAKLAVA', image: 'balaklavablk f.jpg', price: 29, serial_no: "135", category: "hoodie"},
+    { id: 2, name: 'BANKNOTE', image: 'banknoteblk f.jpg', price: 29, serial_no: "210", category: "tshirt"},
+    { id: 3, name: 'BLOW', image: 'blow f.jpg', price: 29, serial_no: "658", category: "hoodie"},
+    { id: 4, name: 'CHROME', image: 'chrome f.jpg', price: 29, serial_no: "658", category: "tshirt"},
+    { id: 5, name: 'CRIMINALREC', image: 'criminalrec f.jpg', price: 29, serial_no: "658", category: "hoodie"},
+    { id: 6, name: 'FVCKYALL', image: 'fvckyall f.jpg', price: 29, serial_no: "658", category: "hoodie"},
+    { id: 7, name: 'GETEM', image: 'getemblk f.jpg', price: 29, serial_no: "658", category: "tshirt"},
+    { id: 8, name: 'SELL', image: 'sellblk f.jpg', price: 29, serial_no: "658", category: "tshirt"},
+    { id: 9, name: 'STREETASSETS', image: 'streetassets f.jpg', price: 29, serial_no: "658", category: "tshirt"},
+    { id: 10, name: 'UZZI', image: 'uzziblk f.jpg', price: 29, serial_no: "658", category: "tshirt"},
+    { id: 11, name: 'WATCHEDOUT', image: 'watchedout f.jpg', price: 29, serial_no: "658", category: "tshirt"}
 ];
 
 let cart = [];
@@ -752,21 +764,12 @@ if (productWithSN) {
         this.classList.add("active");
     }
     btnImages[1].onclick = function() {
-        productImg.src = "images/2.jpg";
+        productImg.src = "images/" + productWithSN.name + " s-" + sn + ".jpg";
         for (bt of btnImages) {
             bt.classList.remove("active");
         }
         this.classList.add("active");
     }
-    btnImages[2].onclick = function() {
-        productImg.src = "images/3.jpg";
-        for (bt of btnImages) {
-            bt.classList.remove("active");
-        }
-        this.classList.add("active");
-    }
-
-
 } else {
     
 }
