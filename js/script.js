@@ -99,27 +99,28 @@ let sizes = [
 ]
 
 let featuredProducts_bright = [
-    { id: 1, name: 'ADDICTION', image: 'addiction f.jpg', price: 29, serial_no: "135", category: "tshirt"},
-    { id: 2, name: 'BALAKLAVA', image: 'balaklavaalb f.jpg', price: 29, serial_no: "222", category: "hoodie"},
-    { id: 3, name: 'BANKNOTE', image: 'banknotealb f.jpg', price: 29, serial_no: "658", category: "tshirt"}
+    { id: 1, name: 'ADDICTION', image: 'addiction f.jpg', price: 29, serial_no: "1", category: "tshirt", hoverImage: 'images/addiction s-1.jpg'},
+    { id: 2, name: 'BALAKLAVA', image: 'balaklavaalb f.jpg', price: 29, serial_no: "2", category: "hoodie", hoverImage: 'images/balaklavaalb s-2.jpg'},
+    { id: 3, name: 'BANKNOTE', image: 'banknotealb f.jpg', price: 29, serial_no: "3", category: "tshirt", hoverImage: 'images/banknotealb s-3.jpg'}
 ];
 
 let featuredProducts_dark = [
-    { id: 1, name: 'BALAKLAVA', image: 'balaklavablk f.jpg', price: 29, serial_no: "135", category: "hoodie"},
-    { id: 2, name: 'BANKNOTE', image: 'banknoteblk f.jpg', price: 29, serial_no: "210", category: "tshirt"},
-    { id: 3, name: 'BLOW', image: 'blow f.jpg', price: 29, serial_no: "658", category: "hoodie"}
+    { id: 1, name: 'BALAKLAVA', image: 'balaklavablk f.jpg', price: 29, serial_no: "10", category: "hoodie", hoverImage: 'images/balaklavablk s-10.jpg'},
+    { id: 2, name: 'BANKNOTE', image: 'banknoteblk f.jpg', price: 29, serial_no: "11", category: "tshirt", hoverImage: 'images/banknoteblk s-11.jpg'},
+    { id: 3, name: 'BLOW', image: 'blow f.jpg', price: 29, serial_no: "12", category: "hoodie", hoverImage: 'images/blow s-12.jpg'}
 ];
 
 let products = [
-    { id: 1, name: 'ADDICTION', image: 'addiction f.jpg', price: 29, serial_no: "135", category: "tshirt"},
-    { id: 2, name: 'BALAKLAVA', image: 'balaklavaalb f.jpg', price: 29, serial_no: "222", category: "hoodie"},
-    { id: 3, name: 'BANKNOTE', image: 'banknotealb f.jpg', price: 29, serial_no: "658", category: "tshirt"},
-    { id: 4, name: 'CRIMINALREC', image: 'criminalrecalb f.jpg', price: 29, serial_no: "658", category: "hoodie"},
-    { id: 5, name: 'EYE', image: 'eye f.jpg', price: 29, serial_no: "658", category: "hoodie"},
-    { id: 6, name: 'GETEM', image: 'getemalb f.jpg', price: 29, serial_no: "658", category: "tshirt"},
-    { id: 7, name: 'SELL', image: 'sellalb f.jpg', price: 29, serial_no: "658", category: "tshirt"},
-    { id: 8, name: 'SNAKEROSE', image: 'snakerose f.jpg', price: 29, serial_no: "658", category: "hoodie"},
-    { id: 9, name: 'UZZI', image: 'uzzialb f.jpg', price: 29, serial_no: "658", category: "tshirt"}
+    { id: 1, name: 'ADDICTION', image: 'addiction f.jpg', price: 29, serial_no: "1", category: "tshirt", hoverImage: 'addiction s-1.jpg'},
+    { id: 2, name: 'BALAKLAVA', image: 'balaklavaalb f.jpg', price: 29, serial_no: "2", category: "hoodie", hoverImage: 'balaklavaalb s-2.jpg'},
+    { id: 3, name: 'BANKNOTE', image: 'banknotealb f.jpg', price: 29, serial_no: "3", category: "tshirt", hoverImage: 'banknotealb s-3.jpg'},
+    { id: 4, name: 'CRIMINALREC', image: 'criminalrecalb f.jpg', price: 29, serial_no: "4", category: "hoodie", hoverImage: 'ciminalrecalb s-4.jpg'},
+    { id: 5, name: 'EYE', image: 'eye f.jpg', price: 29, serial_no: "5", category: "hoodie", hoverImage: 'eye s-5.jpg'},
+    { id: 6, name: 'GETEM', image: 'getemalb f.jpg', price: 29, serial_no: "6", category: "tshirt", hoverImage: 'getemalb s-6.jpg'},
+    { id: 7, name: 'SELL', image: 'sellalb f.jpg', price: 29, serial_no: "7", category: "tshirt", hoverImage: 'sellalb s-7.jpg'},
+    { id: 8, name: 'SNAKEROSE', image: 'snakerose f.jpg', price: 29, serial_no: "8", category: "hoodie", hoverImage: 'snakerose s-8.jpg'},
+    { id: 9, name: 'UZZI', image: 'uzzialb f.jpg', price: 29, serial_no: "9", category: "tshirt", hoverImage: 'uzzialb s-9.jpg'},
+    { id: 10, name: 'INFINITY', image: 'infinity f.jpg', price: 29, serial_no: "21", category: "tshirt", hoverImage: 'infinity s-21.jpg'}
 ];
 
 let products_sizes = [
@@ -142,17 +143,17 @@ let products_sizes = [
 
 
 let productsDark = [
-    { id: 1, name: 'BALAKLAVA', image: 'balaklavablk f.jpg', price: 29, serial_no: "135", category: "hoodie"},
-    { id: 2, name: 'BANKNOTE', image: 'banknoteblk f.jpg', price: 29, serial_no: "210", category: "tshirt"},
-    { id: 3, name: 'BLOW', image: 'blow f.jpg', price: 29, serial_no: "658", category: "hoodie"},
-    { id: 4, name: 'CHROME', image: 'chrome f.jpg', price: 29, serial_no: "658", category: "tshirt"},
-    { id: 5, name: 'CRIMINALREC', image: 'criminalrec f.jpg', price: 29, serial_no: "658", category: "hoodie"},
-    { id: 6, name: 'FVCKYALL', image: 'fvckyall f.jpg', price: 29, serial_no: "658", category: "hoodie"},
-    { id: 7, name: 'GETEM', image: 'getemblk f.jpg', price: 29, serial_no: "658", category: "tshirt"},
-    { id: 8, name: 'SELL', image: 'sellblk f.jpg', price: 29, serial_no: "658", category: "tshirt"},
-    { id: 9, name: 'STREETASSETS', image: 'streetassets f.jpg', price: 29, serial_no: "658", category: "tshirt"},
-    { id: 10, name: 'UZZI', image: 'uzziblk f.jpg', price: 29, serial_no: "658", category: "tshirt"},
-    { id: 11, name: 'WATCHEDOUT', image: 'watchedout f.jpg', price: 29, serial_no: "658", category: "tshirt"}
+    { id: 1, name: 'BALAKLAVA', image: 'balaklavablk f.jpg', price: 29, serial_no: "12", category: "hoodie", hoverImage: 'balaklavablk s-10.jpg'},
+    { id: 2, name: 'BANKNOTE', image: 'banknoteblk f.jpg', price: 29, serial_no: "11", category: "tshirt", hoverImage: 'banknoteblk s-11.jpg'},
+    { id: 3, name: 'BLOW', image: 'blow f.jpg', price: 29, serial_no: "12", category: "hoodie", hoverImage: 'blow s-12.jpg'},
+    { id: 4, name: 'CHROME', image: 'chrome f.jpg', price: 29, serial_no: "13", category: "tshirt", hoverImage: 'chrome s-13.jpg'},
+    { id: 5, name: 'CRIMINALREC', image: 'criminalrec f.jpg', price: 29, serial_no: "14", category: "hoodie", hoverImage: 'criminalrec s-14.jpg'},
+    { id: 6, name: 'FVCKYALL', image: 'fvckyall f.jpg', price: 29, serial_no: "15", category: "hoodie", hoverImage: 'fvckyall s-15.jpg'},
+    { id: 7, name: 'GETEM', image: 'getemblk f.jpg', price: 29, serial_no: "16", category: "tshirt", hoverImage: 'getemblk s-16.jpg'},
+    { id: 8, name: 'SELL', image: 'sellblk f.jpg', price: 29, serial_no: "17", category: "tshirt", hoverImage: 'sellblk s-17.jpg'},
+    { id: 9, name: 'STREETASSETS', image: 'streetassets f.jpg', price: 29, serial_no: "18", category: "tshirt", hoverImage: 'streetassets s-18.jpg'},
+    { id: 10, name: 'UZZI', image: 'uzziblk f.jpg', price: 29, serial_no: "19", category: "tshirt", hoverImage: 'uzziblk s-19.jpg'},
+    { id: 11, name: 'WATCHEDOUT', image: 'watchedout f.jpg', price: 29, serial_no: "20", category: "tshirt", hoverImage: 'watchedout s-20.jpg'}
 ];
 
 let cart = [];
@@ -162,8 +163,8 @@ function loadProductsDark() {
         let newDivDark = document.createElement('div');
         newDivDark.classList.add('product');
         newDivDark.innerHTML = `
-        <div class="product-box" id="${value.serial_no}">
-        <img src="images//${value.image}" alt="" class="product-image" style="cursor: pointer" onclick="openProduct(this)">
+        <div class="product-box" id="${value.serial_no}" onmouseover="changeImage(this, '${value.hoverImage}')" onmouseout="resetImage(this, 'images/${value.image}')">
+        <img src="images//${value.image}" alt="" class="product-image" style="cursor: pointer" onclick="openProductFeatured(this)">
             <div class="product-info">
                 <h4 class="product-title">${value.name}</h4>
                 <p class="product-price">${value.price} RON</p>
@@ -180,6 +181,15 @@ function loadProductsDark() {
     displayProductsDark(productsDark);
 }
 
+
+function changeImage(element, newImage) {
+    element.querySelector('.product-image').src = newImage;
+}
+
+function resetImage(element, originalImage) {
+    element.querySelector('.product-image').src = originalImage;
+}
+
 function loadProducts() {
     // Function to get the available sizes for a given product
     function getAvailableSizes(productId) {
@@ -191,8 +201,9 @@ function loadProducts() {
     // Function to generate product HTML
     function generateProductHTML(product, sizes) {
         return `
-        <div class="product-box" id="${product.serial_no}">
-            <img src="images//${product.image}" alt="" class="product-image" style="cursor: pointer" onclick="openProduct(this)">
+        <div class="product-box" id="${product.serial_no}" onmouseover="changeImage(this, '${product.hoverImage}')" onmouseout="resetImage(this, 'images/${product.image}')">
+            <img id="hoverImage" src="images//${product.image}" alt="" class="product-image" style="cursor: pointer" 
+                    onclick="openProductFeatured(this)">
             <div class="product-info">
                 <h4 class="product-title">${product.name}</h4>
                 <p class="product-price">${product.price} RON</p>
@@ -202,6 +213,8 @@ function loadProducts() {
             </div>
         </div>`;
     }
+
+    
 
     // Display bright products
     featuredProducts_bright.forEach(product => {
@@ -215,28 +228,7 @@ function loadProducts() {
         }
     });
 
-    /*
-    featuredProducts_bright.forEach((value, key) => {
-        let newDivBright = document.createElement('div');
-        newDivBright.classList.add('product');
-        newDivBright.innerHTML = `
-        <div class="product-box" id="${value.serial_no}">
-        <img src="images//${value.image}" alt="" class="product-image" style="cursor: pointer" onclick="openProduct(this)">
-            <div class="product-info">
-                <h4 class="product-title">${value.name}</h4>
-                <p class="product-price">${value.price} RON</p>
-                <p class="product-serial-no" style="display: none">${value.serial_no}</p>
-                <button type="button" class="product-btn" onclick="buyItem(this)">Buy Now</button>
-                
-            </div>
-        </div>
-        `;
-
-        listBrightFeatured.appendChild(newDivBright);
-    })
-*/
     displayProducts(products);
-    
 }
 
 
@@ -527,11 +519,23 @@ function buyItem(e) {
     window.open('product.html?sn=' + id, '_blank');
 }
 
-function openProduct(img) {
+function openProductFeatured(img) {
     var productBox = img.parentNode; // Get the immediate parent container
 
     while (productBox && !productBox.classList.contains('product-box')) {
         productBox = productBox.parentNode; // Traverse up until product-info class is found
+    }
+
+    var id = productBox.id;
+
+    window.location.href = "product.html?sn=" + id;
+}
+
+function openProduct(img) {
+    var productBox = img.parentNode; // Get the immediate parent container
+
+    while (productBox && !productBox.classList.contains('product-item')) {
+        productBox = productBox.parentNode; // Traverse up until product-item class is found
     }
 
     var id = productBox.id;
@@ -764,11 +768,19 @@ if (productWithSN) {
         this.classList.add("active");
     }
     btnImages[1].onclick = function() {
-        productImg.src = "images/" + productWithSN.name + " s-" + sn + ".jpg";
+        let currentImage = productWithSN.image;
+        const baseName = currentImage.substring(0, currentImage.lastIndexOf(" "));
+        const extension = currentImage.substring(currentImage.lastIndexOf("."));
+        currentImage = baseName + " s-" + productWithSN.serial_no + extension;
+        
+        productImg.src = "images/" + currentImage;
+        
         for (bt of btnImages) {
             bt.classList.remove("active");
         }
         this.classList.add("active");
+
+        
     }
 } else {
     
@@ -811,12 +823,28 @@ function displayProducts(productsToDisplay) {
 
         const productItem = document.createElement('div');
         productItem.classList.add('product-item');
+        productItem.id = product.serial_no;
+
         productItem.innerHTML = `
             <img src="images//${product.image}" alt="" class="product-image" style="cursor: pointer">
             <h3>${product.name}</h3>
             <p>Price: ${product.price} RON</p>
             <p>Available sizes: ${availableSizes}</p>
         `;
+
+        // Add event listeners inside the loop for each product
+        productItem.addEventListener('mouseenter', function () {
+            changeImage(productItem, `images/${product.hoverImage}`);
+        });
+
+        productItem.addEventListener('mouseleave', function () {
+            resetImage(productItem, `images/${product.image}`);
+        });
+
+        productItem.addEventListener('click', function () {
+            openProduct(productItem.querySelector('.product-image'));
+        });
+
         productListContainer.appendChild(productItem);
     });
 
@@ -837,6 +865,16 @@ function displayProductsDark(productsToDisplay) {
             <p>Price: ${product.price} RON</p>
             <p>Size: ${product.size}</p>
         `;
+
+        // Add event listeners inside the loop for each product
+        productItem.addEventListener('mouseenter', function () {
+            changeImage(productItem, `images/${product.hoverImage}`);
+        });
+
+        productItem.addEventListener('mouseleave', function () {
+            resetImage(productItem, `images/${product.image}`);
+        });
+
         productListContainer.appendChild(productItem);
     });
 

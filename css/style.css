@@ -840,10 +840,6 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Raleway', sans-serif;
 }
 
-.product:hover img {
-    scale: 1.1;
-}
-
 .product:hover {
     box-shadow: 5px 15px 25px var(--background-color-dark);
 }
@@ -855,6 +851,7 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     width: 240px;
     height: 350px;
+    transition: transform 0.8s ease;
 }
 
 .product-options .product-btn:link,
@@ -1379,6 +1376,7 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     align-items: center;
     height: 100%; /* Optional: Set the height of the container if needed */
+    width: 15%;
 }
 
 .filters {
@@ -1397,6 +1395,12 @@ h1, h2, h3, h4, h5, h6 {
     margin-left: 1rem;
 }
 
+.filters-container label {
+    font-weight: bold;
+    text-align: left;
+    align-items: start;
+}
+
 .product-list {
     flex: 1; /* Take up remaining space */
     box-sizing: border-box;
@@ -1404,6 +1408,7 @@ h1, h2, h3, h4, h5, h6 {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(calc(33.33% - 80px), 1fr));
     gap: 20px;
+    width: 85%;
 }
 
 .product-list-dark {
@@ -1413,6 +1418,7 @@ h1, h2, h3, h4, h5, h6 {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(calc(33.33% - 80px), 1fr));
     gap: 20px;
+    width: 85%;
 }
 
 .product-item,
@@ -1425,16 +1431,15 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .product-item:hover {
-    transform: scale(1.05);
     box-shadow: 2px 1px 15px rgba(0, 0, 0, 0.3);
 }
 
-
 .product-item-dark:hover {
-    transform: scale(1.05);
     box-shadow: 2px 1px 15px rgba(255, 255, 255, 0.3);
 }
 
@@ -1445,10 +1450,39 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .product-image {
-    display: block;
     width: 240px;
     height: 350px;
-    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.8s ease;
+}
+
+.product-box:hover .product-image {
+    transform: rotateY(180deg);
+}
+
+.product-item .product-image {
+    transition: transform 0.8s ease;
+}
+
+.product-item:hover .product-image {
+    transform: rotateY(180deg);
+}
+
+.product-item-dark .product-image {
+    transition: transform 0.8s ease;
+}
+
+.product-item-dark:hover .product-image {
+    transform: rotateY(180deg);
+}
+
+#hoverImage {
+    transition: transform 1s ease;
+}
+
+.product-image:hover #hoverImage {
+    transform: scale(1.2);
 }
 
 .label-filter {
