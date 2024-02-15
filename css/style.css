@@ -246,12 +246,17 @@ h1, h2, h3, h4, h5, h6 {
 /* ---------- CONTACT PAGE ---------- */
 
 .form-section {
+    margin: 0;
+    padding: 0;
     display: flex;
+    position: relative;
+    scroll-behavior: smooth;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background: var(--background-black);
     width: 100%;
+    top: 5.3rem;
 }
 
 .form-section::before {
@@ -518,10 +523,8 @@ h1, h2, h3, h4, h5, h6 {
 .shared-container {
     display: flex;
     flex-direction: column;
-    margin-bottom: 0;
-    padding-bottom: 0;
+    margin-bottom: 85px;
 }
-
 
 .shared-container .navigation:hover {
     background-color: var(--primary-color-white); /* Initial white background */
@@ -915,6 +918,7 @@ h1, h2, h3, h4, h5, h6 {
     min-height: 100vh;
     flex-direction: column;
     background-color: var(--background-black);
+    top: 5.3rem;
 }
 
 /* ---------- CART ---------- */
@@ -1621,9 +1625,33 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+@media (max-width: 1470px) {
+    .products-list,
+    .products-list-dark {
+        flex-direction: column;
+    }
+
+    .filters,
+    .product-list,
+    .product-list-dark {
+        flex: auto; /* Take up the full width in a column layout */
+        width: 100%;
+    }
+
+    .product-item {
+        width: 100%; /* Full width for each product on smaller screens */
+    }
+
+    .product-list,
+    .product-list-dark {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 .footer {
     background-color: #24262b;
     padding: 30px 0 30px 0;
+    height: fit-content;
 }
 
 .footer-container {
@@ -1714,4 +1742,14 @@ h1, h2, h3, h4, h5, h6 {
     .footer-col {
         width: 100%;
     }
+}
+
+/* OUR STORY */
+
+.ourstory-container {
+
+}
+
+.ourstory-container img {
+    width: 100%;
 }
