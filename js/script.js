@@ -99,21 +99,21 @@ let sizes = [
 ]
 
 let featuredProducts_bright = [
-    { id: 1, name: 'ADDICTION', image: 'addiction f.jpg', price: 29, serial_no: "1", category: "tshirt", hoverImage: 'images/addiction s-1.jpg'},
-    { id: 2, name: 'BALAKLAVA', image: 'balaklavaalb f.jpg', price: 29, serial_no: "2", category: "hoodie", hoverImage: 'images/balaklavaalb s-2.jpg'},
-    { id: 3, name: 'BANKNOTE', image: 'banknotealb f.jpg', price: 29, serial_no: "3", category: "tshirt", hoverImage: 'images/banknotealb s-3.jpg'}
+    { id: 1, name: 'ADDICTION', image: 'addiction f.png', price: 29, serial_no: "1", category: "tshirt", hoverImage: 'images/addiction s.png'},
+    { id: 2, name: 'BALAKLAVA', image: 'balaclava alb f.png', price: 29, serial_no: "2", category: "hoodie", hoverImage: 'images/balaclava alb s.png'},
+    { id: 3, name: 'BANKNOTE', image: 'banknote alb f.png', price: 29, serial_no: "3", category: "tshirt", hoverImage: 'images/banknote alb s.png'}
 ];
 
 let featuredProducts_dark = [
-    { id: 1, name: 'BALAKLAVA', image: 'balaklavablk f.jpg', price: 29, serial_no: "10", category: "hoodie", hoverImage: 'images/balaklavablk s-10.jpg'},
+    { id: 1, name: 'BALAKLAVA', image: 'balaclava blk f.png', price: 29, serial_no: "10", category: "hoodie", hoverImage: 'images/balaclava blk s.png'},
     { id: 2, name: 'BANKNOTE', image: 'banknoteblk f.jpg', price: 29, serial_no: "11", category: "tshirt", hoverImage: 'images/banknoteblk s-11.jpg'},
     { id: 3, name: 'BLOW', image: 'blow f.jpg', price: 29, serial_no: "12", category: "hoodie", hoverImage: 'images/blow s-12.jpg'}
 ];
 
 let products = [
-    { id: 1, name: 'ADDICTION', image: 'addiction f.jpg', price: 29, serial_no: "1", category: "tshirt", hoverImage: 'addiction s-1.jpg'},
-    { id: 2, name: 'BALAKLAVA', image: 'balaklavaalb f.jpg', price: 29, serial_no: "2", category: "hoodie", hoverImage: 'balaklavaalb s-2.jpg'},
-    { id: 3, name: 'BANKNOTE', image: 'banknotealb f.jpg', price: 29, serial_no: "3", category: "tshirt", hoverImage: 'banknotealb s-3.jpg'},
+    { id: 1, name: 'ADDICTION', image: 'addiction f.png', price: 29, serial_no: "1", category: "tshirt", hoverImage: 'addiction s.png'},
+    { id: 2, name: 'BALAKLAVA', image: 'balaclava alb f.png', price: 29, serial_no: "2", category: "hoodie", hoverImage: 'balaclava alb s.png'},
+    { id: 3, name: 'BANKNOTE', image: 'banknote alb f.png', price: 29, serial_no: "3", category: "tshirt", hoverImage: 'banknote alb s.png'},
     { id: 4, name: 'CRIMINALREC', image: 'criminalrecalb f.jpg', price: 29, serial_no: "4", category: "hoodie", hoverImage: 'ciminalrecalb s-4.jpg'},
     { id: 5, name: 'EYE', image: 'eye f.jpg', price: 29, serial_no: "5", category: "hoodie", hoverImage: 'eye s-5.jpg'},
     { id: 6, name: 'GETEM', image: 'getemalb f.jpg', price: 29, serial_no: "6", category: "tshirt", hoverImage: 'getemalb s-6.jpg'},
