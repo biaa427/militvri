@@ -111,16 +111,17 @@ let featuredProducts_dark = [
 ];
 
 let products = [
-    { id: 1, name: 'ADDICTION', image: 'addiction f.png', price: 29, serial_no: "1", category: "tshirt", hoverImage: 'addiction s.png'},
-    { id: 2, name: 'BALAKLAVA', image: 'balaclava alb f.png', price: 29, serial_no: "2", category: "hoodie", hoverImage: 'balaclava alb s.png'},
-    { id: 3, name: 'BANKNOTE', image: 'banknote alb f.png', price: 29, serial_no: "3", category: "tshirt", hoverImage: 'banknote alb s.png'},
-    { id: 4, name: 'CRIMINALREC', image: 'criminalrecalb f.jpg', price: 29, serial_no: "4", category: "hoodie", hoverImage: 'ciminalrecalb s-4.jpg'},
-    { id: 5, name: 'EYE', image: 'eye f.jpg', price: 29, serial_no: "5", category: "hoodie", hoverImage: 'eye s-5.jpg'},
-    { id: 6, name: 'GETEM', image: 'getemalb f.jpg', price: 29, serial_no: "6", category: "tshirt", hoverImage: 'getemalb s-6.jpg'},
-    { id: 7, name: 'SELL', image: 'sellalb f.jpg', price: 29, serial_no: "7", category: "tshirt", hoverImage: 'sellalb s-7.jpg'},
-    { id: 8, name: 'SNAKEROSE', image: 'snakerose f.jpg', price: 29, serial_no: "8", category: "hoodie", hoverImage: 'snakerose s-8.jpg'},
-    { id: 9, name: 'UZZI', image: 'uzzialb f.jpg', price: 29, serial_no: "9", category: "tshirt", hoverImage: 'uzzialb s-9.jpg'},
-    { id: 10, name: 'INFINITY', image: 'infinity f.jpg', price: 29, serial_no: "21", category: "tshirt", hoverImage: 'infinity s-21.jpg'}
+    { id: 1, name: 'ADDICTION', image: 'addiction.png', price: 29, serial_no: "1", category: "tshirt", hoverImage: 'addiction s.png'},
+    { id: 2, name: 'BALAKLAVA', image: 'balaclava.png', price: 29, serial_no: "2", category: "hoodie", hoverImage: 'balaclava alb s.png'},
+    { id: 3, name: 'BANKNOTE', image: 'banknote.png', price: 29, serial_no: "3", category: "tshirt", hoverImage: 'banknote alb s.png'},
+    { id: 4, name: 'CRIMINALREC', image: 'cr rec.png', price: 29, serial_no: "4", category: "hoodie", hoverImage: 'ciminalrecalb s-4.jpg'},
+    { id: 5, name: 'EYE', image: 'eye.png', price: 29, serial_no: "5", category: "hoodie", hoverImage: 'eye s-5.jpg'},
+    { id: 6, name: 'GETEM', image: 'get em.png', price: 29, serial_no: "6", category: "tshirt", hoverImage: 'getemalb s-6.jpg'},
+    { id: 7, name: 'SELL', image: 'sell.png', price: 29, serial_no: "7", category: "tshirt", hoverImage: 'sellalb s-7.jpg'},
+    { id: 8, name: 'SNAKEROSE', image: 'snake.png', price: 29, serial_no: "8", category: "hoodie", hoverImage: 'snakerose s-8.jpg'},
+    { id: 9, name: 'UZZI', image: 'uzzi.png', price: 29, serial_no: "9", category: "tshirt", hoverImage: 'uzzialb s-9.jpg'},
+    { id: 10, name: 'INFINITY', image: 'infinity.png', price: 29, serial_no: "21", category: "tshirt", hoverImage: 'infinity s-21.jpg'},
+    { id: 11, name: 'MONEY GROWS', image: 'money grows.png', price: 29, serial_no: "222", category: "tshirt", hoverImage: 'infinity s-21.jpg'}
 ];
 
 let products_sizes = [
@@ -201,8 +202,8 @@ function loadProducts() {
     // Function to generate product HTML
     function generateProductHTML(product, sizes) {
         return `
-        <div class="product-box" id="${product.serial_no}" onmouseover="changeImage(this, '${product.hoverImage}')" onmouseout="resetImage(this, 'images/${product.image}')">
-            <img id="hoverImage" src="images//${product.image}" alt="" class="product-image" style="cursor: pointer" 
+        <div class="product-box" id="${product.serial_no}" onmouseover="changeImage(this, '${product.hoverImage}')" onmouseout="resetImage(this, 'images/-bckg/bright/f/${product.image}')">
+            <img id="hoverImage" src="images/-bckg/bright/f/${product.image}" alt="" class="product-image" style="cursor: pointer" 
                     onclick="openProductFeatured(this)">
             <div class="product-info">
                 <h4 class="product-title">${product.name}</h4>
@@ -213,8 +214,6 @@ function loadProducts() {
             </div>
         </div>`;
     }
-
-    
 
     // Display bright products
     featuredProducts_bright.forEach(product => {
